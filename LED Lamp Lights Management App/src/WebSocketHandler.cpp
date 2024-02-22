@@ -1,9 +1,22 @@
 #include "../headers/WebSocketHandler.h"
 
+WebSocketHandler::WebSocketHandler()
+{
+  Serial.println("[WebSocketHandler]: Please use overloaded constructor for webSocket to work.");
+}
+
 WebSocketHandler::WebSocketHandler(AsyncWebServer *server, AsyncWebSocket *webSocket)
 {
-    (*webSocket).onEvent(OnEvent); ////////// ???????????????
-    (*server).addHandler(webSocket);
+  _server = *server;
+  _webSocket = *webSocket;
+}
+
+void WebSocketHandler::InitializeWebSocket() {
+  _webSocket.onEvent(
+      [this](AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len) {
+      this->OnEvent(server, client, type, arg, data, len);
+    });
+  _server.addHandler(&_webSocket);
 }
 
 void WebSocketHandler::OnEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len) {
