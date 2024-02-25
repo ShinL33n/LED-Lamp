@@ -17,8 +17,8 @@ class LedProfile
         uint8_t getBlue() const         { return _blue; }
         uint8_t getBrightness() const   { return _brightness; }
         uint8_t getStartHour() const    { return _startHour; }
-        uint8_t getEndtHour() const     { return _endHour; }
-        uint8_t getStarMinutes() const  { return _startMinutes; }
+        uint8_t getEndHour() const     { return _endHour; }
+        uint8_t getStartMinutes() const  { return _startMinutes; }
         uint8_t getEndMinutes() const   { return _endMinutes; }
 
 
