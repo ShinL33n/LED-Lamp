@@ -6,12 +6,12 @@
 class LedManager
 {
 private:
-    Adafruit_NeoPixel _ledStrip;
-    LedProfileHandler _ledProfileHandler;
+    Adafruit_NeoPixel *_ledStrip;
+    LedProfileHandler *_ledProfileHandler;
 
     void SetColors();
 
 public:
-    LedManager(Adafruit_NeoPixel LEDStrip, LedProfileHandler *ledProfileHandler);
+    LedManager(Adafruit_NeoPixel *LEDStrip, LedProfileHandler *ledProfileHandler);
 
 };

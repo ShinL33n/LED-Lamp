@@ -38,20 +38,23 @@ function readColors() {
 }
 
 function sendNewLedProfile() {
-    const ledProfile = {
-        red: redValue,
-        green: greenValue,
-        blue: blueValue
-    };
+    // const ledProfile = {
+    //     red: redValue,
+    //     green: greenValue,
+    //     blue: blueValue
+    // };
 
-    myJSON = JSON.stringify(ledProfile);
-    console.log(myJSON);
+    //myJSON = JSON.stringify(ledProfile);
 
-    websocket.send(myJSON);
+    let ledProfile = '{ "Type": "setLedProfile", "Colors": { "Red": ' + redValue + ', "Green": '+ greenValue +', "Blue": '+ blueValue +' }, "Brightness": 80, "Time": { "Hours": { "Start": 10, "End": 18 }, "Minutes": { "Start": 15, "End": 15 } } }';
+
+    console.log(ledProfile);
+
+    websocket.send(ledProfile);
 }
 
 function getLedProfile() {
-    websocket.send("getLedProfile");
+    websocket.send("{\"Type\":\"getLedProfile\"}");
 }
 
 function initWebSocket() {
@@ -81,8 +84,8 @@ function onMessage(event) {
 
     for (var i = 0; i < keys.length; i++){
         var key = keys[i];
-        document.getElementById(key).value = myObj[key];
-        console.log(myObj[key]);
+        document.getElementById(key).value = myObj.Colors[key];
+        console.log(myObj.Colors[key]);
     }
     
     readColors();

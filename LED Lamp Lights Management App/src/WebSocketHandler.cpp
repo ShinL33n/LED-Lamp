@@ -2,23 +2,23 @@
 
 // CRASH IN CONSTRUCTOR \/
 WebSocketHandler::WebSocketHandler(AsyncWebServer *server, AsyncWebSocket *webSocket, LedProfileHandler *ledProfileHandler)
-  : _server(*server), _webSocket(*webSocket), _ledProfileHandler(*ledProfileHandler) { // <--- PROBABLY HERE
-  // _server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
-  //   request->send(SPIFFS, "/index.html", "text/html");
-  // });
+  : _server(server), _webSocket(webSocket), _ledProfileHandler(ledProfileHandler) {
+
+  server->on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
+    request->send(SPIFFS, "/index.html", "text/html");
+  });
+
+  server->serveStatic("/", SPIFFS, "/");
+
+  server->begin();
 }
 
-// WebSocketHandler::WebSocketHandler(LedProfileHandler *ledProfileHandler)
-//   : _ledProfileHandler(*ledProfileHandler) {
-// }
-
-
 void WebSocketHandler::InitializeWebSocket() {
-  _webSocket.onEvent(
+  _webSocket->onEvent(
       [this](AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len) {
       this->OnEvent(server, client, type, arg, data, len);
     });
-  _server.addHandler(&_webSocket);
+  _server->addHandler(_webSocket);
 }
 
 void WebSocketHandler::OnEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len) {
@@ -49,6 +49,9 @@ void WebSocketHandler::HandleWebSocketData(void *arg, uint8_t *data, size_t len,
 	  JsonDocument receivedJsonDocument;
     
     DeserializationError error = deserializeJson(receivedJsonDocument, (char*)data);
+    Serial.println();
+
+  Serial.printf("[HandleWebSocketData]: %s \n", (char*)data);
 
     if (error) {
       Serial.print("[WebSocketHandler]: Parsing failed:");
@@ -63,19 +66,21 @@ void WebSocketHandler::HandleWebSocketData(void *arg, uint8_t *data, size_t len,
 // zaimplementować JSON'a bo wiadomości będę w jego formie (wartość type np doc["type"] == "getLedProfile" albo doc["type"] == "setLedProfile")
 void WebSocketHandler::HandleReceivedMessage(JsonDocument receivedJsonDocument, AsyncWebSocketClient *client) {  
   if(strcmp(receivedJsonDocument["Type"], "getLedProfile") == 0) {
-    // musimy uzyskać json format profilu, bo tak się posługujemu w programie dla wygody, przekonwertować go na stringa i podać w wiadomość
     
-    _webSocket.text((uint32_t)client, _ledProfileHandler.GetLedProfileToJsonString()); /////////////////////////////////////////////
+  Serial.println("[HandleReceivedMessage]: XD z getLedProfile");
+    String lol = _ledProfileHandler->GetLedProfileToJsonString(); // DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG 
+    _webSocket->text((uint32_t)client, lol); /////////////////////////////////////////////////////////////////////////////////  <--------------------- ERROR TUTAJ
+    // musimy uzyskać json format profilu, bo tak się posługujemu w programie dla wygody, przekonwertować go na stringa i podać w wiadomość
   }
 
   else if(strcmp(receivedJsonDocument["Type"], "setLedProfile") == 0) {
+    Serial.println("[HandleReceivedMessage]: XD z setLedProfile"); // DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG DEBBUG 
+    _ledProfileHandler->SetLedProfileFromJsonFormat(receivedJsonDocument);
     // tutaj odwrotnie, musimy przekonwertować stringa w jsona i wysłać do zapisania do pliku
-    // przydała by się też wiadomość że plik zostać zapisany i można go odczytać z pliku jako nowy profil żeby nie robić tego za każdym razem kiedy potrzebny jest profil
-   
-    _ledProfileHandler.SetLedProfileFromJsonFormat(receivedJsonDocument);
-    // MAMY JSON'a / JSON Stringa
-    // musimy móc zapisać profil używając JSONA
-    // muimy móc odczytać profil w formie stringa używając JSONA 
+        // przydała by się też wiadomość że plik zostać zapisany i można go odczytać z pliku jako nowy profil żeby nie robić tego za każdym razem kiedy potrzebny jest profil
+        // MAMY JSON'a / JSON Stringa
+        // musimy móc zapisać profil używając JSONA
+        // muimy móc odczytać profil w formie stringa używając JSONA 
   }
 
   else {

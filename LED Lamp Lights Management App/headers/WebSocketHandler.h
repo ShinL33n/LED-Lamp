@@ -7,9 +7,9 @@
 class WebSocketHandler
 {
 private:
-	AsyncWebServer _server;
-	AsyncWebSocket _webSocket;
-	LedProfileHandler _ledProfileHandler;
+	AsyncWebServer *_server;
+	AsyncWebSocket *_webSocket;
+	LedProfileHandler *_ledProfileHandler;
 
 	void OnEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len);    // Handles different WebSocket events
 	void HandleWebSocketData(void *arg, uint8_t *data, size_t len, AsyncWebSocketClient *client);                                   // Handles messages received via WebSocket

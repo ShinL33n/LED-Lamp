@@ -8,7 +8,7 @@ JsonDocument DeveloperClassForTesting::CreateTestLedProfile() {
 
     ledProfileJson["Colors"]["Red"] = 255;
     ledProfileJson["Colors"]["Green"] = 255;
-    ledProfileJson["Colors"]["Blue"] = 30;
+    ledProfileJson["Colors"]["Blue"] = 120;
 
     ledProfileJson["Brightness"] = 80;
 

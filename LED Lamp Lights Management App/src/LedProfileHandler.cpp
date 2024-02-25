@@ -8,7 +8,7 @@ jak moze wygladać json:
         "Red": 255,
         "Green": 255,
         "Blue": 40
-    }.
+    },
     "Brightness": 80,
     "White hue": 6500,
     "Time": {
@@ -21,6 +21,7 @@ jak moze wygladać json:
             "End": 15
         }
     }
+}
 */
 
 // odczytujemy profil z pliku i ładujemy do do instancji LedProfile:
@@ -114,8 +115,6 @@ void LedProfileHandler::ReadLedProfileFromFileToMemory() {
 }
 
 String LedProfileHandler::ConvertLedProfileToJsonString() {
-    Serial.println("[LedProfileHandler]: XD z ConvertLedProfileToJsonString");
-    
     JsonDocument ledProfileJson;
 
     ledProfileJson["Colors"]["Red"] =     _ledProfile.getRed();
@@ -129,15 +128,13 @@ String LedProfileHandler::ConvertLedProfileToJsonString() {
     ledProfileJson["Time"]["Minutes"]["Start"] =  _ledProfile.getStartMinutes();
     ledProfileJson["Time"]["Minutes"]["End"] =    _ledProfile.getEndMinutes();
 
+
     String ledProfileJsonString;
     serializeJson(ledProfileJson, ledProfileJsonString);
     return ledProfileJsonString;
 }
 
 LedProfile LedProfileHandler::ConvertJsonToLedProfile(JsonDocument ledProfileJson) {
-    // _ledProfile.setRGB(ledProfileJson["Colors"]["Red"], ledProfileJson["Colors"]["Green"], ledProfileJson["Colors"]["Blue"]);
-    // _ledProfile.setBrightness(ledProfileJson["Brightness"]);
-    // _ledProfile.setWorkHours(ledProfileJson["Time"]["Hours"]["Start"],ledProfileJson["Time"]["Hours"]["End"], ledProfileJson["Time"]["Minutes"]["Start"], ledProfileJson["Time"]["Minutes"]["End"]);
     LedProfile ledProfile;
     ledProfile.setRGB(ledProfileJson["Colors"]["Red"], ledProfileJson["Colors"]["Green"], ledProfileJson["Colors"]["Blue"]);
     ledProfile.setBrightness(ledProfileJson["Brightness"]);
