@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "LED Lamp Lights Management App"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"new": "cpp"
+		}
+	}
+}

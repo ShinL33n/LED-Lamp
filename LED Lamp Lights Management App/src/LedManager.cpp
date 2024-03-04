@@ -1,19 +1,33 @@
 #include "../headers/LedManager.h"
 
-LedManager::LedManager(Adafruit_NeoPixel *LEDStrip, LedProfileHandler *ledProfileHandler) {
+LedManager::LedManager(Adafruit_NeoPixel *LEDStrip, LedProfile *ledProfile)
+{
     _ledStrip = LEDStrip;
-    _ledProfileHandler = ledProfileHandler;
+    _ledProfile = *ledProfile;
 
+    InitializeStrip();
+}
+
+void LedManager::InitializeStrip()
+{
     _ledStrip->begin();
     _ledStrip->clear();
+}
 
-    SetColors();
-
+void LedManager::ApplyColors()
+{
+    _ledStrip->fill(_ledStrip->Color(_ledProfile.getRed(), _ledProfile.getGreen(), _ledProfile.getBlue()));
     _ledStrip->show();
 }
 
-void LedManager::SetColors() {
-    LedProfile ledProfile = _ledProfileHandler->GetLedProfile();
+void LedManager::ApplyBrightness()
+{
+}
 
-    _ledStrip->fill(_ledStrip->Color(ledProfile.getRed(), ledProfile.getGreen(), ledProfile.getBlue()));
+void LedManager::ApplyWhiteHue()
+{
+}
+
+void LedManager::ApplyTime()
+{
 }

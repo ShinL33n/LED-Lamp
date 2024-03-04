@@ -1,6 +1,7 @@
 #include "../headers/DeveloperClassForTesting.h"
 
-JsonDocument DeveloperClassForTesting::CreateTestLedProfile() {
+JsonDocument DeveloperClassForTesting::CreateTestLedProfile()
+{
 
     JsonDocument ledProfileJson;
 

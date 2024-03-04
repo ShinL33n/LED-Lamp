@@ -11,7 +11,6 @@ private:
     LedProfile *_ledProfile;
 
     void SaveLedProfileToFile(JsonDocument ledProfileJson);
-    void ReadLedProfileFromFile();
 
     LedProfile ConvertJsonToLedProfile(JsonDocument ledProfileJson);
     String ConvertLedProfileToJsonString(LedProfile ledProfile);
@@ -19,7 +18,7 @@ private:
 public:
     LedProfileHandler(LedProfile *ledProfile);
     void SetLedProfileFromJsonFormat(JsonDocument ledProfileJson);
+    void ReadLedProfileFromFile();
     String GetLedProfileToJsonString();
     LedProfile GetLedProfile();
-
 };
