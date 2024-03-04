@@ -18,9 +18,9 @@ function ready() {
         sliders[i].addEventListener('mouseup', function () {
             //alert(this.id + ": " + this.value);
             switch (this.id) {
-                case 'red': redValue = parseInt(this.value); console.log(this.id + ": " + redValue); break;
-                case 'green': greenValue = parseInt(this.value); console.log(this.id + ": " + greenValue); break;
-                case 'blue': blueValue = parseInt(this.value); console.log(this.id + ": " + blueValue); break;
+                case 'Red': redValue = parseInt(this.value); console.log(this.id + ": " + redValue); break;
+                case 'Green': greenValue = parseInt(this.value); console.log(this.id + ": " + greenValue); break;
+                case 'Blue': blueValue = parseInt(this.value); console.log(this.id + ": " + blueValue); break;
             }
         });
     }
@@ -32,9 +32,9 @@ function onload(event) {
 
 
 function readColors() {
-    redValue = parseInt(document.getElementById("red").value);
-    greenValue = parseInt(document.getElementById("green").value);
-    blueValue = parseInt(document.getElementById("blue").value);
+    redValue = parseInt(document.getElementById("Red").value);
+    greenValue = parseInt(document.getElementById("Green").value);
+    blueValue = parseInt(document.getElementById("Blue").value);
 }
 
 function sendNewLedProfile() {
@@ -81,12 +81,19 @@ function onMessage(event) {
     console.log(event.data);
     var myObj = JSON.parse(event.data);
     var keys = Object.keys(myObj);
+    
+    document.getElementById("Red").value = myObj.Colors["Red"];
+    document.getElementById("Green").value = myObj.Colors["Green"];
+    document.getElementById("Blue").value = myObj.Colors["Blue"];
 
-    for (var i = 0; i < keys.length; i++){
-        var key = keys[i];
-        document.getElementById(key).value = myObj.Colors[key];
-        console.log(myObj.Colors[key]);
-    }
+    // for (var i = 0; i < keys.length; i++){
+    //     var key = keys[i];
+    //     console.log(key);
+    //     document.getElementById("Red").value = myObj.Colors[key];
+    //     console.log(Colors[key]);
+        
+    //     console.log(myObj.Colors[key]);
+    // }
     
     readColors();
 }

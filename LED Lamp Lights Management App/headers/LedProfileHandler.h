@@ -8,16 +8,16 @@
 class LedProfileHandler
 {
 private:
-    LedProfile _ledProfile;
+    LedProfile *_ledProfile;
 
-    void WriteLedProfileFromMemoryToFile();
-    void ReadLedProfileFromFileToMemory();
+    void SaveLedProfileToFile(JsonDocument ledProfileJson);
+    void ReadLedProfileFromFile();
 
     LedProfile ConvertJsonToLedProfile(JsonDocument ledProfileJson);
-    String ConvertLedProfileToJsonString();
+    String ConvertLedProfileToJsonString(LedProfile ledProfile);
 
 public:
-    LedProfileHandler();
+    LedProfileHandler(LedProfile *ledProfile);
     void SetLedProfileFromJsonFormat(JsonDocument ledProfileJson);
     String GetLedProfileToJsonString();
     LedProfile GetLedProfile();

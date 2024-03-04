@@ -24,6 +24,7 @@ jak moze wygladać json:
 }
 */
 
+/*
 // odczytujemy profil z pliku i ładujemy do do instancji LedProfile:
 // -na początku programu
 // -kiedy profil zostanie nadpisany czyli kiedy otrzyma "setLedProfile" w WebSocketHandler
@@ -38,35 +39,76 @@ jak moze wygladać json:
 //     _ledProfile.setBrightness(ledProfile.getBrightness());
 //     _ledProfile.setWorkHours(ledProfile.getStartHour(), ledProfile.getEndHour(), ledProfile.getStartMinutes(), ledProfile.getEndMinutes());
 // }
+*/
 
-
-LedProfileHandler::LedProfileHandler() {
-    Serial.println("[LedProfileHandler]: XD z konstruktora");
-    ReadLedProfileFromFileToMemory();
-}
-
-LedProfile LedProfileHandler::GetLedProfile() {
-    return _ledProfile;
-}
-
-String LedProfileHandler::GetLedProfileToJsonString() {
-    return ConvertLedProfileToJsonString();
-}
-
-void LedProfileHandler::SetLedProfileFromJsonFormat(JsonDocument ledProfileJson) {//LedProfile ledProfile) {
-    Serial.println("[LedProfileHandler]: XD z SetLedProfileFromJsonFormat");
-
-    LedProfile ledProfile = ConvertJsonToLedProfile(ledProfileJson);
-
+LedProfileHandler::LedProfileHandler(LedProfile *ledProfile)
+{
     _ledProfile = ledProfile;
 
-    WriteLedProfileFromMemoryToFile();
+    ReadLedProfileFromFile();
 }
 
-void LedProfileHandler::WriteLedProfileFromMemoryToFile() {
-    Serial.println("[LedProfileHandler]: XD z WriteLedProfileFromMemoryToFile");
+
+LedProfile LedProfileHandler::GetLedProfile()
+{
+    return *_ledProfile;
+}
+
+String LedProfileHandler::GetLedProfileToJsonString()
+{   
+    return ConvertLedProfileToJsonString(*_ledProfile);
+}
+
+void LedProfileHandler::ReadLedProfileFromFile()
+{
+
+    // (TO ADD HERE): DEFAULT PROFILE FILE TO BE SURE LAMP HAS SOMETHING TO WORK WITH FROM THE BEGINING
+    if(!SPIFFS.exists(("/LedProfile.json"))) {
+        DeveloperClassForTesting developerClassForTesting;
+        JsonDocument mockLedProfileJson;
+        mockLedProfileJson = developerClassForTesting.CreateTestLedProfile();
+        SetLedProfileFromJsonFormat(mockLedProfileJson);
+    }
+
+    String ledProfileJsonString;
+    File ledProfileFile = SPIFFS.open("/LedProfile.json", "r");
     
-    String ledProfileJsonString = ConvertLedProfileToJsonString();
+    if(!ledProfileFile) {
+        Serial.println("[LedProfileHandler]: An error occured trying to open a led profile file for reading.");
+    }
+    else {
+        ledProfileJsonString = ledProfileFile.readStringUntil('\n');
+    }
+    ledProfileFile.close();
+
+    JsonDocument ledProfileJson;
+    DeserializationError deserializationError = deserializeJson(ledProfileJson, ledProfileJsonString);
+
+    if (deserializationError) {
+        Serial.printf("[LedProfileHandler]: Parse operation has failed trying to read led profile from a file (%s). \n", deserializationError.f_str());
+    }
+    else {
+        SetLedProfileFromJsonFormat(ledProfileJson);
+    }
+
+}
+
+void LedProfileHandler::SetLedProfileFromJsonFormat(JsonDocument ledProfileJson)
+{
+    LedProfile ledProfile;
+    ledProfile = ConvertJsonToLedProfile(ledProfileJson);
+
+    
+    *_ledProfile = ledProfile; 
+
+
+    SaveLedProfileToFile(ledProfileJson);
+}
+
+void LedProfileHandler::SaveLedProfileToFile(JsonDocument ledProfileJson)
+{
+    String ledProfileJsonString;
+    serializeJson(ledProfileJson, ledProfileJsonString);
 
     File ledProfileFile = SPIFFS.open("/LedProfile.json", "w");
 
@@ -74,59 +116,31 @@ void LedProfileHandler::WriteLedProfileFromMemoryToFile() {
         Serial.println("[LedProfileHandler]: Error opening file for writing.");
     }
     else {
+        Serial.printf("[LedProfileHandler]: ledProfileJsonString: %s \n", ledProfileJsonString);
         ledProfileFile.print(ledProfileJsonString);
     } 
  
     ledProfileFile.close();
 }
 
-void LedProfileHandler::ReadLedProfileFromFileToMemory() {
-    Serial.println("[LedProfileHandler]: XD z ReadLedProfileFromFileToMemory");
 
-    String ledProfileJsonString;
 
-    // (TO ADD HERE): DEFAULT PROFILE FILE TO BE SURE LAMP HAS SOMETHING TO WORK WITH FROM THE BEGINING
-    if(!SPIFFS.exists(("/LedProfile.json"))) {
-        DeveloperClassForTesting developerClassForTesting;
-        SetLedProfileFromJsonFormat(developerClassForTesting.CreateTestLedProfile());
-    }
-
-    File ledProfileFile = SPIFFS.open("/LedProfile.json", "r");
-    
-    if(!ledProfileFile) {
-        Serial.println("[LedProfileHandler]: Error opening file for reading.");
-    }
-    else {
-        ledProfileJsonString = ledProfileFile.readStringUntil('\n');
-    }
-
+String LedProfileHandler::ConvertLedProfileToJsonString(LedProfile ledProfile) {
     JsonDocument ledProfileJson;
 
-    DeserializationError error = deserializeJson(ledProfileJson, ledProfileJsonString);
-    if (error) {
-        Serial.print("[LedProfileHandler]: Parsing failed:");
-        Serial.println(error.f_str());
-    }
-    else {      
-        SetLedProfileFromJsonFormat(ledProfileJson);
-    }
+    // Set Colors
+    ledProfileJson["Colors"]["Red"] =     ledProfile.getRed();
+    ledProfileJson["Colors"]["Green"] =   ledProfile.getGreen();
+    ledProfileJson["Colors"]["Blue"] =    ledProfile.getBlue();
 
-    ledProfileFile.close();
-}
+    // Set Brightness
+    ledProfileJson["Brightness"] =        ledProfile.getBrightness();
 
-String LedProfileHandler::ConvertLedProfileToJsonString() {
-    JsonDocument ledProfileJson;
-
-    ledProfileJson["Colors"]["Red"] =     _ledProfile.getRed();
-    ledProfileJson["Colors"]["Green"] =   _ledProfile.getGreen();
-    ledProfileJson["Colors"]["Blue"] =    _ledProfile.getBlue();
-
-    ledProfileJson["Brightness"] = _ledProfile.getBrightness();
-
-    ledProfileJson["Time"]["Hours"]["Start"] =    _ledProfile.getStartHour();
-    ledProfileJson["Time"]["Hours"]["End"] =      _ledProfile.getEndHour();
-    ledProfileJson["Time"]["Minutes"]["Start"] =  _ledProfile.getStartMinutes();
-    ledProfileJson["Time"]["Minutes"]["End"] =    _ledProfile.getEndMinutes();
+    // Set Time
+    ledProfileJson["Time"]["Hours"]["Start"] =    ledProfile.getStartHour();
+    ledProfileJson["Time"]["Hours"]["End"] =      ledProfile.getEndHour();
+    ledProfileJson["Time"]["Minutes"]["Start"] =  ledProfile.getStartMinutes();
+    ledProfileJson["Time"]["Minutes"]["End"] =    ledProfile.getEndMinutes();
 
 
     String ledProfileJsonString;
@@ -136,6 +150,7 @@ String LedProfileHandler::ConvertLedProfileToJsonString() {
 
 LedProfile LedProfileHandler::ConvertJsonToLedProfile(JsonDocument ledProfileJson) {
     LedProfile ledProfile;
+
     ledProfile.setRGB(ledProfileJson["Colors"]["Red"], ledProfileJson["Colors"]["Green"], ledProfileJson["Colors"]["Blue"]);
     ledProfile.setBrightness(ledProfileJson["Brightness"]);
     ledProfile.setWorkHours(ledProfileJson["Time"]["Hours"]["Start"],ledProfileJson["Time"]["Hours"]["End"], ledProfileJson["Time"]["Minutes"]["Start"], ledProfileJson["Time"]["Minutes"]["End"]);

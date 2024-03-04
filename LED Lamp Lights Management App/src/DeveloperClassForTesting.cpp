@@ -1,14 +1,12 @@
 #include "../headers/DeveloperClassForTesting.h"
 
 JsonDocument DeveloperClassForTesting::CreateTestLedProfile() {
-    
-    Serial.println("[DeveloperClassForTesting]: XD z CreateTestLedProfile");
 
     JsonDocument ledProfileJson;
 
-    ledProfileJson["Colors"]["Red"] = 255;
-    ledProfileJson["Colors"]["Green"] = 255;
-    ledProfileJson["Colors"]["Blue"] = 120;
+    ledProfileJson["Colors"]["Red"] = 10;
+    ledProfileJson["Colors"]["Green"] = 10;
+    ledProfileJson["Colors"]["Blue"] = 2;
 
     ledProfileJson["Brightness"] = 80;
 

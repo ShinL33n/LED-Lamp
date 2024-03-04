@@ -42,4 +42,8 @@ class LedProfile
         // void setWhiteHue(){
 
         // }
+
+        ~LedProfile(){
+            
+        }
 };
