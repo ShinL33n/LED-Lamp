@@ -6,6 +6,11 @@
 #include <ESPAsyncWebServer.h>
 #include "SPIFFS.h"
 #include <ArduinoJson.h>
+// #include <chrono>
+// #include <thread>
+#include <ctime>
+#include <NTPClient.h>
+#include <WiFiUdp.h>
 #include "../headers/LedProfileHandler.h"
 #include "../headers/LedManager.h"
 
@@ -19,28 +24,90 @@ AsyncWebServer server(80);                                        // Create Asyn
 AsyncWebSocket webSocket("/ws");                                  // Create a WebSocket object
 
 void InitializeSPIFFS();         // Initialize file system for file storage
-void InitializeWiFiConnection(); // Initialize ESP32 connection to the network (option to log into desired network via web UI)
 void ApplyLEDProfile();          // Initialize LEDs lighting and effects
+void InitializeWiFiConnection(); // Initialize ESP32 connection to the network (option to log into desired network via web UI)
+void InitializeCurrentTime();    // Initialize getting current time from the NTP
 
-void InitializeWebSocket();                                                                                                  // Initialize WebSocket for communication with client controller apps
+void InitializeWebSocket();                                                                                                  // Initialize WebSocket for data exchange lamp <-> client controller app                                                                                           // Initialize WebSocket for communication with client controller apps
 void OnEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType type, void *arg, uint8_t *data, size_t len); // Handles different WebSocket events
-void HandleWebSocketData(void *arg, uint8_t *data, size_t len, AsyncWebSocketClient *client);                                // Handles messages received via WebSocket
-void HandleReceivedMessage(JsonDocument receivedDataJsonDocument, AsyncWebSocketClient *client);
+void HandleWebSocketData(void *arg, uint8_t *data, size_t len, AsyncWebSocketClient *client);                                // Handles data received via WebSocket
+void HandleReceivedMessage(JsonDocument receivedDataJsonDocument, AsyncWebSocketClient *client);                             // Deeper received messages handler
+
+time_t countdownStartTime = time(0);
+time_t currentTime;
+double deltaMinutes = 5.0;
+
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP);
 
 void setup()
 {
   Serial.begin(115200);
 
-  InitializeSPIFFS();
-  ledProfileHandler.ReadLedProfileFromFile();
-  ApplyLEDProfile();
-  InitializeWiFiConnection();
-  InitializeWebSocket();
+  InitializeSPIFFS();                         // Initialize file system
+  ledProfileHandler.ReadLedProfileFromFile(); // Read LEDs profile on turn on or reset
+  ApplyLEDProfile();                          // Apply LEDs profile to the LED strip
+  InitializeWiFiConnection();                 // Initialize Wi-Fi connection manager
+  InitializeCurrentTime();                    // Get current time with hard coded +1h time offset
+  InitializeWebSocket();                      // Initialize Web Socket with messages handler
 }
 
 void loop()
 {
-  // TO DO: Add time range check then leds will turn on and off etc
+  // Check every five minutes if it is the time to turn LEDs on/off
+  while (!timeClient.update())
+  {
+    timeClient.forceUpdate();
+  }
+
+  if (deltaMinutes >= 5)
+  {
+    uint8_t currentHour = timeClient.getHours();
+    uint8_t currentMinutes = timeClient.getMinutes();
+
+    Serial.print("[Clock]: ");
+    Serial.print(currentHour);
+    Serial.print(":");
+    Serial.print(currentMinutes);
+    Serial.print("\n");
+
+    if ((currentHour > ledProfile.getStartHour() && currentHour < ledProfile.getEndHour()) ||
+        (currentHour == ledProfile.getStartHour() && currentMinutes >= ledProfile.getStartMinutes()) ||
+        (currentHour == ledProfile.getEndHour() && currentMinutes <= ledProfile.getEndMinutes()))
+    {
+      LedManager LEDs(&LEDStrip, &ledProfile);
+      LEDs.On();
+      // ledProfile.setLastState(true); POMYŚLEĆ JAK DOBRZE TO ZAIMPLEMENTOWAĆ ŻEBY LEDY NIE MIGAŁY PRZY STARCIE / RESTARCIE
+    }
+    else
+    {
+      LedManager LEDs(&LEDStrip, &ledProfile);
+      LEDs.Off();
+      // ledProfile.setLastState(false);
+    }
+
+    countdownStartTime = time(0);
+  }
+
+  currentTime = time(0);
+  deltaMinutes = difftime(currentTime, countdownStartTime) / 60.0;
+
+  delay(10000); // Loop every 10 sec to check time
+}
+
+void InitializeSPIFFS()
+{
+  if (!SPIFFS.begin(true))
+  {
+    Serial.println("[SPIFFS]: An error has occurred while mounting SPIFFS.");
+  }
+  Serial.println("[SPIFFS]: SPIFFS mounted successfully.");
+}
+
+void InitializeCurrentTime()
+{
+  timeClient.begin();
+  timeClient.setTimeOffset(3600);
 }
 
 void InitializeWiFiConnection()
@@ -61,22 +128,10 @@ void InitializeWiFiConnection()
   }
 }
 
-void InitializeSPIFFS()
-{
-  if (!SPIFFS.begin(true))
-  {
-    Serial.println("[SPIFFS]: An error has occurred while mounting SPIFFS.");
-  }
-  Serial.println("[SPIFFS]: SPIFFS mounted successfully.");
-}
-
 void ApplyLEDProfile()
 {
-  LedManager ledManager(&LEDStrip, &ledProfile); // Manages led strip effects
-  ledManager.ApplyColors();
-  ledManager.ApplyBrightness();
-  ledManager.ApplyWhiteHue();
-  ledManager.ApplyTime();
+  LedManager LEDs(&LEDStrip, &ledProfile); // Manages led strip effects
+  LEDs.On();
 }
 
 void InitializeWebSocket()

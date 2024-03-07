@@ -10,7 +10,7 @@ jak moze wygladać json:
         "Blue": 40
     },
     "Brightness": 80,
-    "White hue": 6500,
+    "White": 255,
     "Time": {
         "Hours": {
             "Start": 10,
@@ -21,6 +21,7 @@ jak moze wygladać json:
             "End": 15
         }
     }
+    "Last State": true; //
 }
 */
 
@@ -146,11 +147,17 @@ String LedProfileHandler::ConvertLedProfileToJsonString(LedProfile ledProfile)
     // Set Brightness
     ledProfileJson["Brightness"] = ledProfile.getBrightness();
 
+    // Set White
+    ledProfileJson["White"] = ledProfile.getWhite();
+
     // Set Time
     ledProfileJson["Time"]["Hours"]["Start"] = ledProfile.getStartHour();
     ledProfileJson["Time"]["Hours"]["End"] = ledProfile.getEndHour();
     ledProfileJson["Time"]["Minutes"]["Start"] = ledProfile.getStartMinutes();
     ledProfileJson["Time"]["Minutes"]["End"] = ledProfile.getEndMinutes();
+
+    // Set Last State
+    // ledProfileJson["Last State"] = ledProfile.getLastState();
 
     String ledProfileJsonString;
     serializeJson(ledProfileJson, ledProfileJsonString);
@@ -163,7 +170,9 @@ LedProfile LedProfileHandler::ConvertJsonToLedProfile(JsonDocument ledProfileJso
 
     ledProfile.setRGB(ledProfileJson["Colors"]["Red"], ledProfileJson["Colors"]["Green"], ledProfileJson["Colors"]["Blue"]);
     ledProfile.setBrightness(ledProfileJson["Brightness"]);
+    ledProfile.setWhite(ledProfileJson["White"]);
     ledProfile.setWorkHours(ledProfileJson["Time"]["Hours"]["Start"], ledProfileJson["Time"]["Hours"]["End"], ledProfileJson["Time"]["Minutes"]["Start"], ledProfileJson["Time"]["Minutes"]["End"]);
+    // ledProfile.setLastState(ledProfileJson["Last State"]);
 
     return ledProfile;
 }

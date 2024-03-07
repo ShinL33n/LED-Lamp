@@ -46,7 +46,7 @@ function sendNewLedProfile() {
 
     //myJSON = JSON.stringify(ledProfile);
 
-    let ledProfile = '{ "Type": "setLedProfile", "Colors": { "Red": ' + redValue + ', "Green": '+ greenValue +', "Blue": '+ blueValue +' }, "Brightness": 80, "Time": { "Hours": { "Start": 10, "End": 18 }, "Minutes": { "Start": 15, "End": 15 } } }';
+    let ledProfile = '{ "Type": "setLedProfile", "Colors": { "Red": ' + redValue + ', "Green": '+ greenValue +', "Blue": '+ blueValue +' }, "Brightness": 80, "Time": { "Hours": { "Start": 10, "End": 22 }, "Minutes": { "Start": 15, "End": 15 }}}';
 
     console.log(ledProfile);
 

@@ -11,11 +11,13 @@ private:
     LedProfile _ledProfile;
 
     void InitializeStrip();
-
-public:
-    LedManager(Adafruit_NeoPixel *LEDStrip, LedProfile *ledProfile);
     void ApplyColors();
     void ApplyBrightness();
     void ApplyWhiteHue();
-    void ApplyTime();
+    // void ApplyLastState();
+
+public:
+    LedManager(Adafruit_NeoPixel *LEDStrip, LedProfile *ledProfile);
+    void On();
+    void Off();
 };

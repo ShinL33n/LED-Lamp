@@ -14,6 +14,20 @@ void LedManager::InitializeStrip()
     _ledStrip->clear();
 }
 
+void LedManager::On()
+{
+    ApplyColors();
+    ApplyBrightness();
+    ApplyWhiteHue();
+    // ApplyLastState();
+}
+
+void LedManager::Off()
+{
+    _ledStrip->clear();
+    _ledStrip->show();
+}
+
 void LedManager::ApplyColors()
 {
     _ledStrip->fill(_ledStrip->Color(_ledProfile.getRed(), _ledProfile.getGreen(), _ledProfile.getBlue()));
@@ -22,12 +36,20 @@ void LedManager::ApplyColors()
 
 void LedManager::ApplyBrightness()
 {
+    _ledStrip->setBrightness(_ledProfile.getBrightness());
+    _ledStrip->show();
 }
 
 void LedManager::ApplyWhiteHue()
 {
+    _ledStrip->fill(_ledStrip->Color(_ledProfile.getRed(), _ledProfile.getGreen(), _ledProfile.getBlue(), _ledProfile.getWhite()));
+    _ledStrip->show();
 }
 
-void LedManager::ApplyTime()
-{
-}
+// void LedManager::ApplyLastState()
+// {
+//     if (_ledProfile.getLastState())
+//         On();
+//     else
+//         Off();
+// }
