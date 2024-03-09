@@ -3,23 +3,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control your lamp</title>
+    <style>
+        .time{
+            min-width: 80px; 
+            min-height: 30px;
+        }
+    </style>
 </head>
 <body>
     <script src="script.js"></script>
 
     <div class="slidecontainer">
-        <label> Red </label>
-        <input type="range" min="0" max="255" class="slider" id="Red">
+        <label for="Red"> Red </label>
+        <input type="range" min="0" max="255" value="0" class="slider" id="Red">
 
-        <label> Green </label>
-        <input type="range" min="0" max="255" class="slider" id="Green">
+        <label for="Green"> Green </label>
+        <input type="range" min="0" max="255" value="0" class="slider" id="Green">
         
-        <label> Blue </label>
-        <input type="range" min="0" max="255" class="slider" id="Blue">
+        <label for="Blue"> Blue </label>
+        <input type="range" min="0" max="255" value="0" class="slider" id="Blue">
     </div>
 
+    <br /><br />
+
     <div>
-        <button id="send">Send</button>
+        <label for="Brightness"> Brightness </label>
+        <input type="range" min="0" max="255" value="0" class="slider" id="Brightness">
+
+        <label for="White"> White </label>
+        <input type="range" min="0" max="255" value="0" class="slider" id="White">
+    </div>
+
+    <br /><br />
+
+    <div>
+        <label for="startHour"> On:  </label>
+        <input type="text" class="time" id="startHour" maxlength="2" size="4">
+
+        <label for="startMin"> : </label>
+        <input type="text" class="time" id="startMin" maxlength="2" size="4">
+
+        <br />
+
+        <label for="endHour"> Off: </label>
+        <input type="text" class="time" id="endHour" maxlength="2" size="4">
+
+        <label for="endMin"> : </label>
+        <input type="text" class="time" id="endMin" maxlength="2" size="4">
+        <br />
+        <!--<div id="update" onclick="updateTime()"> update </div>-->
+    </div>
+
+    <br /><br />
+
+    <div>
+        <label for="timeFrames">Apply time frame:</label>
+        <input type="checkbox" id="timeFrames" value="true" checked>
+    </div>
+
+    <br /><br />
+
+    <div>
+        <button id="send" style="min-width: 100px; min-height: 50px;">Send</button>
     </div>
 
 </body>

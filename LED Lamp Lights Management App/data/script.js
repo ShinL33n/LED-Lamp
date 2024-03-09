@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", ready);
 
 
 var sliders = document.getElementsByClassName("slider");
-var redValue, greenValue, blueValue;
+var time = document.getElementsByClassName("time");
+var redValue, greenValue, blueValue, brightnessValue, whiteValue;
+var startHourValue, endHourValue, startMinValue, endMinValue;
 var myJSON;
 
 function ready() {
@@ -16,15 +18,39 @@ function ready() {
 
     for (var i = 0; i < sliders.length; i++) {
         sliders[i].addEventListener('mouseup', function () {
-            //alert(this.id + ": " + this.value);
             switch (this.id) {
                 case 'Red': redValue = parseInt(this.value); console.log(this.id + ": " + redValue); break;
                 case 'Green': greenValue = parseInt(this.value); console.log(this.id + ": " + greenValue); break;
                 case 'Blue': blueValue = parseInt(this.value); console.log(this.id + ": " + blueValue); break;
+                case 'Brightness': brightnessValue = parseInt(this.value); console.log(this.id + ": " + brightnessValue); break;
+                case 'White': whiteValue = parseInt(this.value); console.log(this.id + ": " + whiteValue); break;
+            }
+        });
+    }
+
+    for (var i = 0; i < time.length; i++) {
+        time[i].addEventListener('change', function () {
+            switch (this.id) {
+                case 'startHour': startHourValue = parseInt(this.value); console.log(this.id + ": " + startHourValue); break;
+                case 'endHour': endHourValue = parseInt(this.value); console.log(this.id + ": " + endHourValue); break;
+                case 'startMin': startMinValue = parseInt(this.value); console.log(this.id + ": " + startMinValue); break;
+                case 'endMin': endMinValue = parseInt(this.value); console.log(this.id + ": " + endMinValue); break;
             }
         });
     }
 }
+
+// function updateTime() {
+//     startHourValue = parseInt(document.getElementById("startHour").value);
+//     endHourValue = parseInt(document.getElementById("endHour").value);
+//     startMinValue = parseInt(document.getElementById("startMin").value);
+//     endMinValue = parseInt(document.getElementById("endMin").value);
+
+//     console.log(startHourValue);
+//     console.log(startMinValue);
+//     console.log(endHourValue); 
+//     console.log(endMinValue); 
+// }
 
 function onload(event) {
     initWebSocket();
@@ -37,6 +63,18 @@ function readColors() {
     blueValue = parseInt(document.getElementById("Blue").value);
 }
 
+function readTime() {
+    startHourValue = parseInt(document.getElementById("startHour").value);
+    endHourValue = parseInt(document.getElementById("endHour").value);
+    startMinValue = parseInt(document.getElementById("startMin").value);
+    endMinValue = parseInt(document.getElementById("endMin").value);
+}
+
+function readBrightnessAndWhite() {
+    brightnessValue = parseInt(document.getElementById("Brightness").value);
+    whiteValue = parseInt(document.getElementById("White").value);
+}
+
 function sendNewLedProfile() {
     // const ledProfile = {
     //     red: redValue,
@@ -46,7 +84,7 @@ function sendNewLedProfile() {
 
     //myJSON = JSON.stringify(ledProfile);
 
-    let ledProfile = '{ "Type": "setLedProfile", "Colors": { "Red": ' + redValue + ', "Green": '+ greenValue +', "Blue": '+ blueValue +' }, "Brightness": 80, "Time": { "Hours": { "Start": 10, "End": 22 }, "Minutes": { "Start": 15, "End": 15 }}}';
+    let ledProfile = '{ "Type": "setLedProfile", "Colors": { "Red": ' + redValue + ', "Green": '+ greenValue +', "Blue": '+ blueValue +' }, "Brightness": '+ brightnessValue +', "White": '+ whiteValue +', "Time": { "Hours": { "Start": ' + startHourValue + ', "End": ' + endHourValue + ' }, "Minutes": { "Start": ' + startMinValue + ', "End": ' + endMinValue + ' }}}';
 
     console.log(ledProfile);
 
@@ -85,6 +123,14 @@ function onMessage(event) {
     document.getElementById("Red").value = myObj.Colors["Red"];
     document.getElementById("Green").value = myObj.Colors["Green"];
     document.getElementById("Blue").value = myObj.Colors["Blue"];
+    
+    document.getElementById("Brightness").value = myObj["Brightness"];
+    document.getElementById("White").value = myObj["White"];
+    
+    document.getElementById("startHour").value = myObj.Time.Hours["Start"];
+    document.getElementById("endHour").value = myObj.Time.Hours["End"];
+    document.getElementById("startMin").value = myObj.Time.Minutes["Start"];
+    document.getElementById("endMin").value = myObj.Time.Minutes["End"];
 
     // for (var i = 0; i < keys.length; i++){
     //     var key = keys[i];
@@ -96,4 +142,6 @@ function onMessage(event) {
     // }
     
     readColors();
+    readTime();
+    readBrightnessAndWhite();
 }

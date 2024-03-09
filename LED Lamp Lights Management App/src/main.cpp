@@ -6,13 +6,18 @@
 #include <ESPAsyncWebServer.h>
 #include "SPIFFS.h"
 #include <ArduinoJson.h>
-// #include <chrono>
-// #include <thread>
 #include <ctime>
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 #include "../headers/LedProfileHandler.h"
 #include "../headers/LedManager.h"
+
+/*
+  TO DO:
+  - will it turn on if no internet connection is provided? check this.
+  - when get new led profile have to check time at that moment for potential time frame changes
+  - bind things in JS to html elements and WebSocket actions
+*/
 
 #define PIN 4
 #define NUMPIXELS 8
@@ -46,10 +51,10 @@ void setup()
 
   InitializeSPIFFS();                         // Initialize file system
   ledProfileHandler.ReadLedProfileFromFile(); // Read LEDs profile on turn on or reset
-  ApplyLEDProfile();                          // Apply LEDs profile to the LED strip
-  InitializeWiFiConnection();                 // Initialize Wi-Fi connection manager
-  InitializeCurrentTime();                    // Get current time with hard coded +1h time offset
-  InitializeWebSocket();                      // Initialize Web Socket with messages handler
+  // ApplyLEDProfile();                          // Apply LEDs profile to the LED strip
+  InitializeWiFiConnection(); // Initialize Wi-Fi connection manager
+  InitializeCurrentTime();    // Get current time with hard coded +1h time offset
+  InitializeWebSocket();      // Initialize Web Socket with messages handler
 }
 
 void loop()
@@ -68,22 +73,25 @@ void loop()
     Serial.print("[Clock]: ");
     Serial.print(currentHour);
     Serial.print(":");
-    Serial.print(currentMinutes);
+    currentMinutes >= 10 ? Serial.print(currentMinutes) : Serial.printf("0%i", currentMinutes);
     Serial.print("\n");
 
+    // IT DOESNT WORK IN MIDNIGHT FRAME !!! TO DO: MAKE IT !!!
     if ((currentHour > ledProfile.getStartHour() && currentHour < ledProfile.getEndHour()) ||
         (currentHour == ledProfile.getStartHour() && currentMinutes >= ledProfile.getStartMinutes()) ||
-        (currentHour == ledProfile.getEndHour() && currentMinutes <= ledProfile.getEndMinutes()))
+        (currentHour == ledProfile.getEndHour() && currentMinutes < ledProfile.getEndMinutes()))
     {
       LedManager LEDs(&LEDStrip, &ledProfile);
       LEDs.On();
-      // ledProfile.setLastState(true); POMYŚLEĆ JAK DOBRZE TO ZAIMPLEMENTOWAĆ ŻEBY LEDY NIE MIGAŁY PRZY STARCIE / RESTARCIE
+      ledProfile.setLastState(true); // POMYŚLEĆ JAK DOBRZE TO ZAIMPLEMENTOWAĆ ŻEBY LEDY NIE MIGAŁY PRZY STARCIE / RESTARCIE
+      ledProfileHandler.SetLedProfile(ledProfile);
     }
     else
     {
       LedManager LEDs(&LEDStrip, &ledProfile);
       LEDs.Off();
-      // ledProfile.setLastState(false);
+      ledProfile.setLastState(false);
+      ledProfileHandler.SetLedProfile(ledProfile);
     }
 
     countdownStartTime = time(0);
@@ -131,7 +139,8 @@ void InitializeWiFiConnection()
 void ApplyLEDProfile()
 {
   LedManager LEDs(&LEDStrip, &ledProfile); // Manages led strip effects
-  LEDs.On();
+  // LEDs.On();
+  LEDs.ApplyLastState();
 }
 
 void InitializeWebSocket()

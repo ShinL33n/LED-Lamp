@@ -8,7 +8,8 @@ private:
     uint8_t _startHour, _endHour; // The time lamp is suposed to work defined in hour and minutes of the hour
     uint8_t _startMinutes, _endMinutes;
     uint8_t _white; // White color temperature the light is suposed to be
-    // bool _lastState;
+    bool _lastState;
+    bool _timeFrame;
 
 public:
     uint8_t getRed() const { return _red; }
@@ -20,7 +21,8 @@ public:
     uint8_t getEndHour() const { return _endHour; }
     uint8_t getStartMinutes() const { return _startMinutes; }
     uint8_t getEndMinutes() const { return _endMinutes; }
-    // bool getLastState() const { return _lastState; }
+    bool getLastState() const { return _lastState; }
+    bool getTimeFrame() const { return _timeFrame; }
 
     void setRGB(uint8_t red, uint8_t green, uint8_t blue)
     {
@@ -47,8 +49,13 @@ public:
         _endMinutes = endMinutes;
     }
 
-    // void setLastState(bool lastState)
-    // {
-    //     _lastState = lastState;
-    // }
+    void setLastState(bool lastState)
+    {
+        _lastState = lastState;
+    }
+
+    void setTimeFrame(bool timeFrame)
+    {
+        _timeFrame = timeFrame;
+    }
 };

@@ -42,6 +42,20 @@ jak moze wygladać json:
 // }
 */
 
+template <>
+JsonDocument LedProfileHandler::ConvertLedProfileTo(LedProfile ledProfile)
+{
+    return AssignLedProfileJson(ledProfile);
+}
+
+template <>
+String LedProfileHandler::ConvertLedProfileTo(LedProfile ledProfile)
+{
+    String ledProfileJsonString;
+    serializeJson(AssignLedProfileJson(ledProfile), ledProfileJsonString);
+    return ledProfileJsonString;
+}
+
 LedProfileHandler::LedProfileHandler(LedProfile *ledProfile)
 {
     _ledProfile = ledProfile;
@@ -54,7 +68,7 @@ LedProfile LedProfileHandler::GetLedProfile()
 
 String LedProfileHandler::GetLedProfileToJsonString()
 {
-    return ConvertLedProfileToJsonString(*_ledProfile);
+    return ConvertLedProfileTo<String>(*_ledProfile);
 }
 
 void LedProfileHandler::ReadLedProfileFromFile()
@@ -99,9 +113,22 @@ void LedProfileHandler::ReadLedProfileFromFile()
     }
 }
 
+void LedProfileHandler::SetLedProfile(LedProfile ledProfile)
+{
+    JsonDocument ledProfileJson;
+
+    ledProfileJson = ConvertLedProfileTo<JsonDocument>(ledProfile);
+
+    SaveLedProfileToFile(ledProfileJson);
+}
+
 void LedProfileHandler::SetLedProfileFromJsonFormat(JsonDocument ledProfileJson)
 {
     LedProfile ledProfile;
+
+    if (!ledProfileJson.containsKey("Last State"))
+        ledProfileJson["Last State"] = (*_ledProfile).getLastState();
+
     ledProfile = ConvertJsonToLedProfile(ledProfileJson);
 
     *_ledProfile = ledProfile;
@@ -135,34 +162,97 @@ void LedProfileHandler::SaveLedProfileToFile(JsonDocument ledProfileJson)
     ledProfileFile.close();
 }
 
-String LedProfileHandler::ConvertLedProfileToJsonString(LedProfile ledProfile)
+JsonDocument LedProfileHandler::AssignLedProfileJson(LedProfile ledProfile)
 {
     JsonDocument ledProfileJson;
-
-    // Set Colors
     ledProfileJson["Colors"]["Red"] = ledProfile.getRed();
     ledProfileJson["Colors"]["Green"] = ledProfile.getGreen();
     ledProfileJson["Colors"]["Blue"] = ledProfile.getBlue();
-
-    // Set Brightness
     ledProfileJson["Brightness"] = ledProfile.getBrightness();
-
-    // Set White
     ledProfileJson["White"] = ledProfile.getWhite();
-
-    // Set Time
     ledProfileJson["Time"]["Hours"]["Start"] = ledProfile.getStartHour();
     ledProfileJson["Time"]["Hours"]["End"] = ledProfile.getEndHour();
     ledProfileJson["Time"]["Minutes"]["Start"] = ledProfile.getStartMinutes();
     ledProfileJson["Time"]["Minutes"]["End"] = ledProfile.getEndMinutes();
+    ledProfileJson["Last State"] = ledProfile.getLastState();
 
-    // Set Last State
-    // ledProfileJson["Last State"] = ledProfile.getLastState();
-
-    String ledProfileJsonString;
-    serializeJson(ledProfileJson, ledProfileJsonString);
-    return ledProfileJsonString;
+    return ledProfileJson;
 }
+
+// template <typename T>
+// T ConvertLedProfileTo(LedProfile ledProfile);
+
+/*template <typename T>
+T ConvertLedProfileTo(LedProfile ledProfile)
+{
+    JsonDocument ledProfileJson;
+    ledProfileJson["Colors"]["Red"] = ledProfile.getRed();
+    ledProfileJson["Colors"]["Green"] = ledProfile.getGreen();
+    ledProfileJson["Colors"]["Blue"] = ledProfile.getBlue();
+    ledProfileJson["Brightness"] = ledProfile.getBrightness();
+    ledProfileJson["White"] = ledProfile.getWhite();
+    ledProfileJson["Time"]["Hours"]["Start"] = ledProfile.getStartHour();
+    ledProfileJson["Time"]["Hours"]["End"] = ledProfile.getEndHour();
+    ledProfileJson["Time"]["Minutes"]["Start"] = ledProfile.getStartMinutes();
+    ledProfileJson["Time"]["Minutes"]["End"] = ledProfile.getEndMinutes();
+    ledProfileJson["Last State"] = ledProfile.getLastState();
+
+    // Gdy typ T jest JsonDocument
+    if constexpr (std::is_same_v<T, JsonDocument>)
+    {
+
+        return ledProfileJson;
+    }
+    // Gdy typ T jest String
+    else if constexpr (std::is_same_v<T, String>)
+    {
+        String ledProfileJsonString;
+        serializeJson(ledProfileJson, ledProfileJsonString);
+
+        return ledProfileJsonString;
+    }
+    // Rzucenie wyjątku dla nieobsługiwanego typu T
+    else
+    {
+        throw std::runtime_error("[Runtime Error]: Unsupported generic specified.");
+    }
+}*/
+
+// template <typename T>
+// T LedProfileHandler::ConvertLedProfileTo(LedProfile ledProfile)
+// {
+//     JsonDocument ledProfileJson;
+
+//     // Set Colors
+//     ledProfileJson["Colors"]["Red"] = ledProfile.getRed();
+//     ledProfileJson["Colors"]["Green"] = ledProfile.getGreen();
+//     ledProfileJson["Colors"]["Blue"] = ledProfile.getBlue();
+
+//     // Set Brightness
+//     ledProfileJson["Brightness"] = ledProfile.getBrightness();
+
+//     // Set White
+//     ledProfileJson["White"] = ledProfile.getWhite();
+
+//     // Set Time
+//     ledProfileJson["Time"]["Hours"]["Start"] = ledProfile.getStartHour();
+//     ledProfileJson["Time"]["Hours"]["End"] = ledProfile.getEndHour();
+//     ledProfileJson["Time"]["Minutes"]["Start"] = ledProfile.getStartMinutes();
+//     ledProfileJson["Time"]["Minutes"]["End"] = ledProfile.getEndMinutes();
+
+//     // Set Last State
+//     ledProfileJson["Last State"] = ledProfile.getLastState();
+
+//     if (std::is_same<T, JsonDocument>::value)
+//         return ledProfileJson;
+
+//     String ledProfileJsonString;
+//     serializeJson(ledProfileJson, ledProfileJsonString);
+//     if (std::is_same<T, String>::value)
+//         return ledProfileJsonString;
+//     else
+//         throw std::runtime_error("[Runtime Error]: Unsupported generic specified.");
+// }
 
 LedProfile LedProfileHandler::ConvertJsonToLedProfile(JsonDocument ledProfileJson)
 {
@@ -172,7 +262,22 @@ LedProfile LedProfileHandler::ConvertJsonToLedProfile(JsonDocument ledProfileJso
     ledProfile.setBrightness(ledProfileJson["Brightness"]);
     ledProfile.setWhite(ledProfileJson["White"]);
     ledProfile.setWorkHours(ledProfileJson["Time"]["Hours"]["Start"], ledProfileJson["Time"]["Hours"]["End"], ledProfileJson["Time"]["Minutes"]["Start"], ledProfileJson["Time"]["Minutes"]["End"]);
-    // ledProfile.setLastState(ledProfileJson["Last State"]);
+    ledProfile.setLastState(ledProfileJson["Last State"]);
+
+    // // We want to set 'last state' into memory profile while reading from file,
+    // // but doesn't want it while saving incoming WebSocket message so:
+    // if (ledProfileJson.containsKey("Last State"))
+    //     // profile read from file contains last state key so we want to set it
+    //     ledProfile.setLastState(ledProfileJson["Last State"]);
+    // else
+    // // profile that came from WebSocket must not contain last state key,
+    // // because it is not a type we set by hand (it changes automatically
+    // // by lamp time frames when LEDs turn on/off)
+    // {
+    //     Serial.println((*_ledProfile).getLastState());
+    //     ledProfile.setLastState((*_ledProfile).getLastState());
+    // }
+    // // POTENTIAL ERROR HERE -----------^
 
     return ledProfile;
 }

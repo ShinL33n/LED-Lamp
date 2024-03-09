@@ -7,17 +7,16 @@ class LedManager
 {
 private:
     Adafruit_NeoPixel *_ledStrip;
-    LedProfileHandler *_ledProfileHandler;
     LedProfile _ledProfile;
 
     void InitializeStrip();
     void ApplyColors();
     void ApplyBrightness();
     void ApplyWhiteHue();
-    // void ApplyLastState();
 
 public:
     LedManager(Adafruit_NeoPixel *LEDStrip, LedProfile *ledProfile);
+    void ApplyLastState();
     void On();
     void Off();
 };

@@ -16,10 +16,10 @@ void LedManager::InitializeStrip()
 
 void LedManager::On()
 {
+    // ApplyLastState();
     ApplyColors();
     ApplyBrightness();
     ApplyWhiteHue();
-    // ApplyLastState();
 }
 
 void LedManager::Off()
@@ -46,10 +46,10 @@ void LedManager::ApplyWhiteHue()
     _ledStrip->show();
 }
 
-// void LedManager::ApplyLastState()
-// {
-//     if (_ledProfile.getLastState())
-//         On();
-//     else
-//         Off();
-// }
+void LedManager::ApplyLastState()
+{
+    if (_ledProfile.getLastState() || !_ledProfile.getTimeFrame())
+        On();
+    else
+        Off();
+}
