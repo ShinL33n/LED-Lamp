@@ -5,8 +5,6 @@
 class DeveloperClassForTesting
 {
 private:
-
 public:
     JsonDocument CreateTestLedProfile();
-
 };

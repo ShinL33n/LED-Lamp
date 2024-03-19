@@ -15,8 +15,12 @@
 /*
   TO DO:
   - will it turn on if no internet connection is provided? check this.
-  - when get new led profile have to check time at that moment for potential time frame changes
-  - bind things in JS to html elements and WebSocket actions
+  - implement on/off switch
+  - implement ligh time slopes
+
+  x when get new led profile have to check time at that moment for potential time frame changes
+  x/- bind things in JS to html elements and WebSocket actions
+  x fix midnight range time checking
 */
 
 #define PIN 4
@@ -38,9 +42,13 @@ void OnEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType 
 void HandleWebSocketData(void *arg, uint8_t *data, size_t len, AsyncWebSocketClient *client);                                // Handles data received via WebSocket
 void HandleReceivedMessage(JsonDocument receivedDataJsonDocument, AsyncWebSocketClient *client);                             // Deeper received messages handler
 
+bool InTimeFrame(uint8_t currentHour, uint8_t currentMinutes); // Check if current hour is in led profile's time frame
+bool TimePassed(double minutesToPass);
+
 time_t countdownStartTime = time(0);
 time_t currentTime;
 double deltaMinutes = 5.0;
+bool hasTimePassed = false;
 
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
@@ -65,7 +73,7 @@ void loop()
     timeClient.forceUpdate();
   }
 
-  if (deltaMinutes >= 5)
+  if (hasTimePassed)
   {
     uint8_t currentHour = timeClient.getHours();
     uint8_t currentMinutes = timeClient.getMinutes();
@@ -77,9 +85,7 @@ void loop()
     Serial.print("\n");
 
     // IT DOESNT WORK IN MIDNIGHT FRAME !!! TO DO: MAKE IT !!!
-    if ((currentHour > ledProfile.getStartHour() && currentHour < ledProfile.getEndHour()) ||
-        (currentHour == ledProfile.getStartHour() && currentMinutes >= ledProfile.getStartMinutes()) ||
-        (currentHour == ledProfile.getEndHour() && currentMinutes < ledProfile.getEndMinutes()))
+    if (InTimeFrame(currentHour, currentMinutes))
     {
       LedManager LEDs(&LEDStrip, &ledProfile);
       LEDs.On();
@@ -97,10 +103,11 @@ void loop()
     countdownStartTime = time(0);
   }
 
-  currentTime = time(0);
-  deltaMinutes = difftime(currentTime, countdownStartTime) / 60.0;
+  // currentTime = time(0);
+  // deltaMinutes = difftime(currentTime, countdownStartTime) / 60.0;
+  hasTimePassed = TimePassed(5);
 
-  delay(10000); // Loop every 10 sec to check time
+  // delay(10000); // Loop every 10 sec to check time
 }
 
 void InitializeSPIFFS()
@@ -212,11 +219,40 @@ void HandleReceivedMessage(JsonDocument receivedJsonDocument, AsyncWebSocketClie
   else if (receivedJsonDocument["Type"] == "setLedProfile")
   {
     ledProfileHandler.SetLedProfileFromJsonFormat(receivedJsonDocument);
-    ApplyLEDProfile();
+    // ApplyLEDProfile();
+    // deltaMinutes = 5.0; // To check potential time frame changes instantionaly
+    hasTimePassed = true;
   }
 
   else
   {
     Serial.print("[WebSocketHandler]: Unsupported message received.");
   }
+}
+
+bool InTimeFrame(uint8_t currentHour, uint8_t currentMinutes)
+{
+  // Check if we are in "day" or "night" time frame
+  // "Day"
+  if (ledProfile.getStartHour() <= ledProfile.getEndHour())
+  {
+    return ((currentHour > ledProfile.getStartHour() && currentHour < ledProfile.getEndHour()) ||
+            (currentHour == ledProfile.getStartHour() && currentMinutes >= ledProfile.getStartMinutes()) ||
+            (currentHour == ledProfile.getEndHour() && currentMinutes < ledProfile.getEndMinutes()));
+  }
+  // "Night"
+  else
+  {
+    return ((currentHour < ledProfile.getStartHour() && currentHour < ledProfile.getEndHour()) ||
+            (currentHour == ledProfile.getStartHour() && currentMinutes >= ledProfile.getStartMinutes()) ||
+            (currentHour == ledProfile.getEndHour() && currentMinutes < ledProfile.getEndMinutes()));
+  }
+}
+
+bool TimePassed(double minutesToPass)
+{
+  currentTime = time(0);
+  deltaMinutes = difftime(currentTime, countdownStartTime) / 60.0;
+
+  return deltaMinutes >= minutesToPass;
 }

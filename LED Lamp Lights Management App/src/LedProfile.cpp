@@ -7,9 +7,9 @@ private:
     uint8_t _brightness;          // Brightness of leds given in percentage ranged from 0 to 100
     uint8_t _startHour, _endHour; // The time lamp is suposed to work defined in hour and minutes of the hour
     uint8_t _startMinutes, _endMinutes;
-    uint8_t _white; // White color temperature the light is suposed to be
-    bool _lastState;
-    bool _timeFrame;
+    uint8_t _white;  // White color temperature the light is suposed to be
+    bool _lastState; // Last state LEDs were in - in case reset/turn off to avoid blinking on power on
+    bool _timeFrame; // Tells whether time frame window will be enforced
 
 public:
     uint8_t getRed() const { return _red; }
