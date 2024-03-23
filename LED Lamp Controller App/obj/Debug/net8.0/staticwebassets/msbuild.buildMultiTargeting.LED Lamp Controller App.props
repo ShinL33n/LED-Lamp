@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LED Lamp Controller App.props" />
+</Project>

@@ -1,0 +1,123 @@
+.page[b-v22kqhmhi5] {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+
+
+/*** CONTENT BODY ****/
+.content[b-v22kqhmhi5] {
+    padding: 1em;
+    flex-basis: 100%;
+    background-image: linear-gradient(0.45turn, var(--top-color), var(--bottom-color));
+    color: var(--font-color);
+}
+
+    /*.content.dark-mode {
+        background-image: linear-gradient(0.45turn, #1b1d1e, #0a171e);
+    }*/
+/*************************/
+
+
+
+/*** NAVBAR ****/
+.navbar[b-v22kqhmhi5] {
+    padding: 0 1em;
+    height: 100px;
+    overflow-x: scroll;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(0.5turn, var(--top-color), var(--bottom-color));
+    font-size: 0.7em;
+    color: var(--font-color);
+}
+    /*.navbar.dark-mode {
+        background-image: linear-gradient(0.5turn, #181a1b, #07141b);
+    }*/
+
+@media (min-width: 640.98px) {
+    .page[b-v22kqhmhi5] {
+        flex-direction: row;
+    }
+
+    .navbar[b-v22kqhmhi5] {
+        padding: 0;
+        height: 100%;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: center;
+        min-width: auto;
+        width: 150px;
+    }
+}
+/*************************/
+
+
+/*** DARK MODE SWITCH ****/
+#dark-mode-switch[b-v22kqhmhi5] {
+    position: fixed;
+    display: inline-block;
+    width: 30px;
+    height: 18px;
+    bottom: .5em;
+    right: .5em;
+}
+
+    #dark-mode-switch input[b-v22kqhmhi5] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+.slider[b-v22kqhmhi5] {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000020;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+    .slider[b-v22kqhmhi5]:before {
+        position: absolute;
+        content: "";
+        height: 13px;
+        width: 13px;
+        left: 2.5px;
+        bottom: 2.5px;
+        background-color: azure;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .dark-mode.slider[b-v22kqhmhi5]:before {
+            background-color: #1c364abd;
+            -webkit-transform: translateX(12px);
+            -ms-transform: translateX(12px);
+            transform: translateX(12px);
+        }
+
+.slider.round[b-v22kqhmhi5] {
+    border-radius: 40px;
+}
+
+    .slider.round[b-v22kqhmhi5]:before {
+        border-radius: 50%;
+    }
+
+@media (min-width: 640.98px) {
+
+    #dark-mode-switch[b-v22kqhmhi5] {
+        bottom: auto;
+        top: .5em;
+        right: .5em;
+    }
+}
+/*************************/

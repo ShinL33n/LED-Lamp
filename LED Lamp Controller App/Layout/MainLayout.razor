@@ -1,0 +1,19 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <nav class="navbar @DarkModeCssClass">
+        <NavMenu DarkModeCssClass="@DarkModeCssClass" />
+    </nav>
+
+    <main class="content @DarkModeCssClass">
+        @Body
+    </main>
+
+    <label id="dark-mode-switch" class="@DarkModeCssClass">
+        <input type="checkbox" class="@DarkModeCssClass" @onclick="ToggleDarkMode">
+        <span class="slider round @DarkModeCssClass"></span>
+    </label>
+</div>
+
+
+

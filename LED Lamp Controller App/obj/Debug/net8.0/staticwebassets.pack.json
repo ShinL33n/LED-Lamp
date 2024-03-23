@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\obj\\Debug\\net8.0\\compressed\\aiopydkiei.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LED Lamp Controller App.styles.css",
+      "PackagePath": "staticwebassets\\LED Lamp Controller App.styles.css"
+    },
+    {
+      "Id": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LED Lamp Controller App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LED Lamp Controller App.props",
+      "PackagePath": "build\\LED Lamp Controller App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LED Lamp Controller App.props",
+      "PackagePath": "buildMultiTargeting\\LED Lamp Controller App.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LED Lamp Controller App.props",
+      "PackagePath": "buildTransitive\\LED Lamp Controller App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

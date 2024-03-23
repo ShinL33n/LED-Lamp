@@ -1,0 +1,65 @@
+﻿.menu {
+    position: relative;
+    overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+span {
+    align-self: center;
+}
+
+    span h1 {
+        color: var(--accent-color);
+        font-weight: 400;
+        font-size:  2em;
+        margin-top: 0;
+    }
+
+a > div {
+    height: 100%;
+}
+
+.tiles {
+    align-self: center;
+    display: grid;
+    width: 80%;
+    height: 85%;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    place-items: stretch stretch;
+}
+
+.tile-item {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border: solid 1px var(--less-accent-color);
+    border-radius: 10px;
+}
+
+    .tile-item:hover {
+        cursor: pointer;
+    }
+
+.tile-item-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 640.98px) {
+    .tiles {
+        grid-template-columns: repeat(3, 1fr);
+        width: 60%;
+        height: 60%;
+    }
+
+    .tile-item {
+    }
+}
