@@ -1,0 +1,39 @@
+﻿@page "/StripColor"
+
+<PageTitle>Strip Color</PageTitle>
+
+@*
+    TO DO:
+    - kolor ledów aktualizuje się z każdą  zmianą  wartości na sliderze (w czasie rzeczywistym)
+    - wybrane kolory zapisywane są w local storage:
+    - profil ledowy ładowany jest tylko przy odświeżaniu aplikacji i ładowany jest do local storage
+        [wszystkie zmiany w sensji to dane w local storage (profil aktualizowany jest w czasie rzeczywistym)]
+    x kolor na suwakach zapamiętywany (jednak static działa, trzeba było odświeżyć wszystko)
+    
+*@
+
+<article class="container">
+    <div id="Red" class="slider-container">
+        <label class="slider-label" for="RedSlider">Red:</label>
+        <input id="RedSlider" class="slider" type="range" min="0" max="255" @bind="@RedSliderCurrentValue" @bind:event="oninput" />
+        <input type="text" id="RedValue" class="slider-value" @bind="@RedSliderCurrentValue" @oninput="@(e => HandleTextInput(e, "Red"))" />
+    </div>
+
+    <div id="Green" class="slider-container">
+        <label class="slider-label" for="GreenSlider">Green:</label>
+        <input id="GreenSlider" class="slider" type="range" min="0" max="255" @bind="@GreenSliderCurrentValue" @bind:event="oninput" />
+        <input type="text" id="GreenValue" class="slider-value" @bind="@GreenSliderCurrentValue" @oninput="@(e => HandleTextInput(e, "Green"))" />
+    </div>
+
+    <div id="Blue" class="slider-container">
+        <label class="slider-label" for="BlueSlider">Blue:</label>
+        <input id="BlueSlider" class="slider" type="range" min="0" max="255" @bind="@BlueSliderCurrentValue" @bind:event="oninput" />
+        <input type="text" id="BlueValue" class="slider-value" @bind="@BlueSliderCurrentValue" @oninput="@(e => HandleTextInput(e, "Blue"))" />
+    </div>
+
+    <div id="White" class="slider-container">
+        <label class="slider-label" for="WhiteSlider">White:</label>
+        <input id="WhiteSlider" class="slider" type="range" min="0" max="255" @bind="@WhiteSliderCurrentValue" @bind:event="oninput" />
+        <input type="text" id="WhiteValue" class="slider-value" @bind="@WhiteSliderCurrentValue" @oninput="@(e => HandleTextInput(e, "White"))" />
+    </div>
+</article>

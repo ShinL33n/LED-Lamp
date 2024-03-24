@@ -1,7 +1,24 @@
 ﻿.navbar-item {
-    padding: 1em;
+    padding: .2em;
     margin: 0;
 }
+
+    .navbar-item ::deep a {
+        position: relative;
+        display: block;
+        padding: 1em;
+    }
+
+        .navbar-item ::deep a:hover {
+            background-color: var(--less-accent-color);
+            border-radius: 10px;
+        }
+
+        .navbar-item ::deep a.active {
+            background-color: var(--accent-color);
+            border-radius: 10px;
+            transition: background-color 0.4s;
+        }
 
 .navbar-item-text {
     display: none;
@@ -12,9 +29,54 @@
     align-items: center;
 }
 
+    .nav-item-content:first-of-type {
+        padding-left: 1rem;
+    }
+
+    .nav-item-content:last-of-type {
+        padding-right: 1rem;
+    }
+
+
 @media (min-width: 640.98px) {
     .navbar-item-text {
         display: inline;
+    }
+
+    .navbar-item {
+        padding: 0;
+    }
+
+        .navbar-item ::deep a {
+            width: 100px;
+            padding: 10px;
+        }
+
+            .navbar-item ::deep a:hover {
+                border-radius: 10px 0 0 10px;
+            }
+
+            .navbar-item ::deep a.active {
+                border-radius: 10px 0 0 10px;
+            }
+
+
+    .nav-link {
+        display: inline-block;
+        height: 200px !important;
+        background-color: white;
+    }
+
+    .nav-item-content:first-of-type {
+        padding-left: 0;
+    }
+
+    .nav-item-content:last-of-type {
+        padding-right: 0;
+    }
+
+    .bi {
+        margin-right: 0.5rem !important;
     }
 }
 
@@ -23,7 +85,7 @@
     position: relative;
     width: 1.5rem;
     height: 1.5rem;
-    margin-right: 0.5rem;
+    margin-right: 0;
     top: -1px;
     background-size: cover;
     filter: invert(1);

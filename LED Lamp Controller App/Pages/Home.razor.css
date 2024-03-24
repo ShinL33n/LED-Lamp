@@ -47,19 +47,40 @@ a > div {
         cursor: pointer;
     }
 
+    .tile-item ::deep a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+        .tile-item ::deep a:hover {
+            background-color: var(--less-accent-color);
+            border-radius: 9px;
+        }
+
+        .tile-item ::deep a.active {
+            background-color: var(--accent-color);
+            border-radius: 9px;
+            transition: background-color 0.4s;
+        }
+
 .tile-item-text {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 1em;
 }
 
 @media (min-width: 640.98px) {
+    .menu {
+        overflow-x: hidden;
+    }
+
     .tiles {
         grid-template-columns: repeat(3, 1fr);
         width: 60%;
         height: 60%;
-    }
-
-    .tile-item {
     }
 }

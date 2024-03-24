@@ -1,0 +1,24 @@
+.slider-container[b-3tyiwenkx5] {
+    margin-left: 2em;
+}
+
+.slider-label[b-3tyiwenkx5] {
+    display: block;
+    margin-top: 1em;
+    color: var(--accent-color);
+}
+
+.slider[b-3tyiwenkx5] {
+
+}
+
+.slider-value[b-3tyiwenkx5] {
+    display: block;
+    width: fit-content;
+    color: var(--less-accent-color);
+}
+
+
+@media (min-width: 640.98px) {
+    
+}

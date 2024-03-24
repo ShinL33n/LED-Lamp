@@ -1031,3 +1031,4 @@ D:\Dokumenty\Programming projects\SMP32\LED Lamp\LED Lamp Controller App\obj\Deb
 D:\Dokumenty\Programming projects\SMP32\LED Lamp\LED Lamp Controller App\obj\Debug\net8.0\LED Lamp Controller App.pdb
 D:\Dokumenty\Programming projects\SMP32\LED Lamp\LED Lamp Controller App\obj\Debug\net8.0\ref\LED Lamp Controller App.dll
 D:\Dokumenty\Programming projects\SMP32\LED Lamp\LED Lamp Controller App\obj\Debug\net8.0\scopedcss\Pages\Home.razor.rz.scp.css
+D:\Dokumenty\Programming projects\SMP32\LED Lamp\LED Lamp Controller App\obj\Debug\net8.0\scopedcss\Pages\StripColor.razor.rz.scp.css
