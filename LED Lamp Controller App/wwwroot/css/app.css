@@ -4,6 +4,7 @@
     --font-color: #222;
     --accent-color: #3561827d;
     --less-accent-color: #35618266;
+    --fill-color: #7e7e7e21;
 }
 
 .dark-mode {
@@ -12,6 +13,7 @@
     --font-color: azure;
     --accent-color: #356182;
     --less-accent-color: #35618266;
+    --fill-color: #19242b99;
 }
 
 html, body {

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "LED Lamp Controller App",
   "resources": {
-    "hash": "sha256-gRmVBk6WELlXfHmcNdgjVB4QjoaGHy5b3QD241+VHnA=",
+    "hash": "sha256-A1kzHbzJS/qGKrtvEoN5VIU3g8zLva6BRii3w+drtII=",
     "jsModuleNative": {
       "dotnet.native.8.0.2.r8n0wxhrf8.js": "sha256-gPMK16QWoJSTxorlZJqcVtbBRTniIQWlLsJN2O4cJHg="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-OH3kXneWqQMz6CUSo6POZqIeMqn9+5RR+IgHn5TnIwA=",
       "netstandard.wasm": "sha256-ZOswxXEbR2TmqjpbaBEdgr85Bv1NC4GwOwoJ+oxXM3M=",
       "System.Private.CoreLib.wasm": "sha256-I2w0iHf5nvSQyF1YE1VbgdTzmmz6a4OE6J7vo5wFa/4=",
-      "LED Lamp Controller App.wasm": "sha256-YxcIclESvSK/OVBAZIWUP1llQ41ltiJ/pfPQ78R9Nnw="
+      "LED Lamp Controller App.wasm": "sha256-39gqz7ODY/Y5a49MWcRoo1nLgxkGKiVaKVoushaEga4="
     },
     "pdb": {
-      "LED Lamp Controller App.pdb": "sha256-0Uu8Pcmx7KxNev8naco/rrojazFw3GizvWCSyuQPIAw="
+      "LED Lamp Controller App.pdb": "sha256-zrwl22Iohxh1XxJXt0S4berkCi/ZTFQq39EZEZvOyuo="
     }
   },
   "cacheBootResources": true,

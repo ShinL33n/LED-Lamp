@@ -2,4 +2,55 @@
 
 <PageTitle>Time Frame</PageTitle>
 
-<h1>Time Frame Page</h1>
+@*
+    TO DO:
+    - wykres (x,y), gdzie x to godziny, y to % świecenia, przesuwamy punkt prawo-lewo aby zmienić godzine i 2 punkty 
+      góra dół, żeby zmienić brightness [wersja podstawowa]
+    - wykresy (x,y), gdzie x to godziny, y to % świecenia danych kolorów, punkty dowolnie przesuwalne na wykresie, 
+      z jakimś 'magnesowym przyczepianiem np co 5% brightnessu i 5min czasu' [wersja docelowa]
+    - pola do ręcznego dokładnego ustawiania punktów (podobnie jak w StripColor.razor) 
+*@
+
+<article class="container">
+    <div class="time-frame-container">
+        <div class="brightness-controller" id="brightness-container">
+            <input class="brightness-slider" id="brightness-slider" min="0" max="100" type="range" />
+        </div>
+        <div class="left-chart">
+            <div class="top-layer">
+                <input class="top-on-hour-slider" type="range" />
+            </div>
+            <div class="bottom-layer">
+                <input class="bottom-off-hour-slider" type="range" />
+            </div>
+        </div>
+        <div class="right-chart">
+            <div class="top-layer">
+                <input class="top-on-hour-slider" type="range" />
+            </div>
+            <div class="bottom-layer">
+                <input class="bottom-off-hour-slider" type="range" />
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<script>
+
+    function setBrightnessSliderHeight() {
+        var brightnessContainerHeight = document.getElementById("brightness-container").offsetHeight;
+        var brightnessContainerWidth = document.getElementById("brightness-container").offsetWidth;
+        document.getElementById("brightness-slider").style.width = brightnessContainerHeight + "px";
+        document.getElementById("brightness-slider").style.left = brightnessContainerWidth / 2 - brightnessContainerHeight / 2 + "px";
+    }
+
+    window.addEventListener('resize', function () {
+        setBrightnessSliderHeight();
+    });
+
+    window.addEventListener('load', function () {
+        setBrightnessSliderHeight();
+    });
+
+</script>

@@ -1,0 +1,198 @@
+.container[b-1496i5xg6n] {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.time-frame-container[b-1496i5xg6n] {
+    position: relative;
+    height: 70%;
+    width: 100%;
+    padding: 1em;
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 10px;
+    background-color: var(--fill-color);
+}
+
+.brightness-controller[b-1496i5xg6n] {
+    position: absolute;
+}
+
+.left-chart[b-1496i5xg6n], .right-chart[b-1496i5xg6n] {
+    flex-basis: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+
+.top-layer[b-1496i5xg6n], .bottom-layer[b-1496i5xg6n] {
+    flex-basis: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+}
+
+@media (min-width: 640.98px) {
+    .time-frame-container[b-1496i5xg6n] {
+        height: 60%;
+        width: 80%;
+    }
+
+}
+
+
+
+
+
+
+
+/* SLIDERS STYLE */
+
+input[type=range][b-1496i5xg6n] {
+    height: .5em;
+    -webkit-appearance: none;
+    background: transparent;
+    background: #00000044; /* DO USUNIĘCIA */
+    margin: 10px 0;
+    width: 100%;
+}
+
+    input[type=range]:focus[b-1496i5xg6n] {
+        outline: none;
+    }
+
+    input[type=range][b-1496i5xg6n]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+        transition: 0.2s;
+        border-radius: 2px;
+    }
+
+    input[type=range][b-1496i5xg6n]::-webkit-slider-thumb {
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        background: var(--accent-color);
+        cursor: pointer;
+        -webkit-appearance: none;
+        margin-top: -9px;
+    }
+
+    input[type=range]:focus[b-1496i5xg6n]::-webkit-slider-runnable-track {
+        background: transparent;
+    }
+
+    input[type=range][b-1496i5xg6n]::-moz-range-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+        background: transparent;
+    }
+
+    input[type=range][b-1496i5xg6n]::-moz-range-thumb {
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        border: none;
+        background: var(--accent-color);
+        cursor: pointer;
+    }
+
+    input[type=range][b-1496i5xg6n]::-ms-track {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+    }
+
+    input[type=range][b-1496i5xg6n]::-ms-fill-lower {
+        border-radius: 4px;
+    }
+
+    input[type=range][b-1496i5xg6n]::-ms-fill-upper {
+        border-radius: 4px;
+    }
+
+    input[type=range][b-1496i5xg6n]::-ms-thumb {
+        margin-top: 1px;
+        height: 18px;
+        width: 18px;
+        border-radius: 50%;
+        background: var(--accent-color);
+        cursor: pointer;
+    }
+
+    input[type=range]:focus[b-1496i5xg6n]::-ms-fill-lower {
+    }
+
+    input[type=range]:focus[b-1496i5xg6n]::-ms-fill-upper {
+    }
+
+
+@media (min-width: 640.98px) {
+    input[type=range][b-1496i5xg6n]::-webkit-slider-thumb {
+        height: 14px;
+        width: 14px;
+    }
+
+    input[type=range][b-1496i5xg6n]::-moz-range-thumb {
+        height: 14px;
+        width: 14px;
+    }
+
+    input[type=range][b-1496i5xg6n]::-ms-thumb {
+        height: 14px;
+        width: 14px;
+    }
+}
+
+
+
+/* BRIGHTNESS SLIDER*/
+.brightness-controller[b-1496i5xg6n] {
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+    top: 1em;
+    left: 1em;
+    pointer-events: none;
+}
+
+.brightness-slider[b-1496i5xg6n] {
+    -webkit-transform: rotate(90deg);
+    position: relative;
+    top: calc(50% - 1em);
+    pointer-events: auto;
+}
+
+    .brightness-slider[b-1496i5xg6n]::-webkit-slider-thumb {
+        height: 300px !important;
+        width: 4px !important;
+        border-radius: 0px !important;
+    }
+
+    .brightness-slider[b-1496i5xg6n]::-webkit-slider-thumb {
+        height: 300px !important;
+        width: 4px !important;
+        border-radius: 0px !important;
+    }
+
+    .brightness-slider[b-1496i5xg6n]::-moz-range-thumb {
+        height: 300px !important;
+        width: 4px !important;
+        border-radius: 0px !important;
+    }
+
+    .brightness-slider[b-1496i5xg6n]::-ms-thumb {
+        height: 300px !important;
+        width: 4px !important;
+        border-radius: 0px !important;
+    }
+
+
+@media (min-width: 640.98px) {
+    
+}
