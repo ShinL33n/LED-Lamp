@@ -13,51 +13,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = LED_Lamp_Controller_App
 build_property.RootNamespace = LED_Lamp_Controller_App
-build_property.ProjectDir = D:\Dokumenty\Programming projects\SMP32\LED Lamp\LED Lamp Controller App\
+build_property.ProjectDir = C:\Pliki\Dokumenty\Programming Projects\ESP32\LED-Lamp\LED Lamp Controller App\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Dokumenty\Programming projects\SMP32\LED Lamp\LED Lamp Controller App
+build_property.MSBuildProjectDirectory = C:\Pliki\Dokumenty\Programming Projects\ESP32\LED-Lamp\LED Lamp Controller App
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/App.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Pages/Help.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Pages/Help.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGVscC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Pages/IndividualLeds.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Pages/IndividualLeds.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kaXZpZHVhbExlZHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Pages/OnOffSwitch.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Pages/OnOffSwitch.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT25PZmZTd2l0Y2gucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/_Imports.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Layout/MainLayout.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-v22kqhmhi5
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Layout/NavMenu.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-jprz7s75ss
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Pages/Home.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-4vwhxuxu6f
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Pages/StripColor.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Pages/StripColor.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RyaXBDb2xvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-3tyiwenkx5
 
-[D:/Dokumenty/Programming projects/SMP32/LED Lamp/LED Lamp Controller App/Pages/TimeFrame.razor]
+[C:/Pliki/Dokumenty/Programming Projects/ESP32/LED-Lamp/LED Lamp Controller App/Pages/TimeFrame.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGltZUZyYW1lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-1496i5xg6n

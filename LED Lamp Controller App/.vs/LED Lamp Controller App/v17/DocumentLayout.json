@@ -1,78 +1,78 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\",
+  "WorkspaceRootPath": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\timeframe.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\timeframe.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\timeframe.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\timeframe.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\stripcolor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\stripcolor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\stripcolor.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\stripcolor.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\stripcolor.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\stripcolor.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\layout\\mainlayout.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\mainlayout.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\timeframe.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\timeframe.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\timeframe.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\help.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\help.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\individualleds.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\individualleds.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\individualleds.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\pages\\onoffswitch.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\timeframe.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\timeframe.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\stripcolor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\stripcolor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\onoffswitch.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\onoffswitch.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|d:\\dokumenty\\programming projects\\smp32\\led lamp\\led lamp controller app\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\stripcolor.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\stripcolor.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\timeframe.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\timeframe.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\home.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\stripcolor.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\stripcolor.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\layout\\mainlayout.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\mainlayout.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|c:\\pliki\\dokumenty\\programming projects\\esp32\\led-lamp\\led lamp controller app\\pages\\help.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2ECD34ED-CC09-422D-A836-143FBDAE9AED}|LED Lamp Controller App.csproj|solutionrelative:pages\\help.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -81,54 +81,53 @@
       "VerticalTabListWidth": 182,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "DockedWidth": 235,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "index.html",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\wwwroot\\index.html",
-              "RelativeDocumentMoniker": "wwwroot\\index.html",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\wwwroot\\index.html",
-              "RelativeToolTip": "wwwroot\\index.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAACkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-03-23T05:21:22.02Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "Layout\\MainLayout.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "Layout\\MainLayout.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA7AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-22T16:33:25.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MainLayout.razor.cs",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.cs",
-              "RelativeDocumentMoniker": "Layout\\MainLayout.razor.cs",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.cs",
-              "RelativeToolTip": "Layout\\MainLayout.razor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2022-04-07T07:20:53.646Z",
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "wwwroot\\index.html",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\wwwroot\\index.html",
+              "RelativeToolTip": "wwwroot\\index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-03-23T05:21:22.02Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Layout\\MainLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-22T16:33:25.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainLayout.razor.cs",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.cs",
+              "RelativeDocumentMoniker": "Layout\\MainLayout.razor.cs",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.cs",
+              "RelativeToolTip": "Layout\\MainLayout.razor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-04-07T07:20:53.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "NavMenu.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "Layout\\NavMenu.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor",
               "RelativeToolTip": "Layout\\NavMenu.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -136,99 +135,102 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "Home.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\Home.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Pages\\Home.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\Home.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\Home.razor",
               "RelativeToolTip": "Pages\\Home.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2021-04-14T14:44:37.552Z"
+              "WhenOpened": "2021-04-14T14:44:37.552Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "StripColor.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor",
               "RelativeDocumentMoniker": "Pages\\StripColor.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor",
               "RelativeToolTip": "Pages\\StripColor.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAACDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2020-10-17T18:26:29.505Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "StripColor.razor.cs",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.cs",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.cs",
               "RelativeDocumentMoniker": "Pages\\StripColor.razor.cs",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.cs",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.cs",
               "RelativeToolTip": "Pages\\StripColor.razor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2020-08-26T14:31:12.158Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TimeFrame.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor",
               "RelativeDocumentMoniker": "Pages\\TimeFrame.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor",
               "RelativeToolTip": "Pages\\TimeFrame.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAABkAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACQAAACuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2020-07-05T10:35:54.811Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "TimeFrame.razor.cs",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.cs",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.cs",
               "RelativeDocumentMoniker": "Pages\\TimeFrame.razor.cs",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.cs",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.cs",
               "RelativeToolTip": "Pages\\TimeFrame.razor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAQwDQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2020-05-14T06:40:37.464Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
               "Title": "IndividualLeds.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\IndividualLeds.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\IndividualLeds.razor",
               "RelativeDocumentMoniker": "Pages\\IndividualLeds.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\IndividualLeds.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\IndividualLeds.razor",
               "RelativeToolTip": "Pages\\IndividualLeds.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAYAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2020-03-23T02:45:20.117Z"
+              "WhenOpened": "2020-03-23T02:45:20.117Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 4,
               "Title": "OnOffSwitch.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\OnOffSwitch.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\OnOffSwitch.razor",
               "RelativeDocumentMoniker": "Pages\\OnOffSwitch.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\OnOffSwitch.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\OnOffSwitch.razor",
               "RelativeToolTip": "Pages\\OnOffSwitch.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2019-08-27T11:04:10.729Z"
+              "WhenOpened": "2019-08-27T11:04:10.729Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Help.razor",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\Help.razor",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\Help.razor",
               "RelativeDocumentMoniker": "Pages\\Help.razor",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\Help.razor",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\Help.razor",
               "RelativeToolTip": "Pages\\Help.razor",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -237,86 +239,81 @@
           ]
         },
         {
-          "DockedWidth": 200,
+          "DockedWidth": 165,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "TimeFrame.razor.css",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.css",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.css",
               "RelativeDocumentMoniker": "Pages\\TimeFrame.razor.css",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.css",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\TimeFrame.razor.css",
               "RelativeToolTip": "Pages\\TimeFrame.razor.css",
-              "ViewState": "AQIAAIEAAAAAAAAAAAAAAKYAAAAVAAAA",
+              "ViewState": "AQIAADUAAAAAAAAAAAAgwFAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-03-28T15:37:08.595Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "StripColor.razor.css",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.css",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.css",
               "RelativeDocumentMoniker": "Pages\\StripColor.razor.css",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.css",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\StripColor.razor.css",
               "RelativeToolTip": "Pages\\StripColor.razor.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-24T15:16:58.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-24T15:16:58.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "Home.razor.css",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\Home.razor.css",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\Home.razor.css",
               "RelativeDocumentMoniker": "Pages\\Home.razor.css",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Pages\\Home.razor.css",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Pages\\Home.razor.css",
               "RelativeToolTip": "Pages\\Home.razor.css",
               "ViewState": "AQIAACEAAAAAAAAAAAAAAFQAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-23T18:10:12.004Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-23T18:10:12.004Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "MainLayout.razor.css",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.css",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.css",
               "RelativeDocumentMoniker": "Layout\\MainLayout.razor.css",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.css",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\MainLayout.razor.css",
               "RelativeToolTip": "Layout\\MainLayout.razor.css",
               "ViewState": "AQIAADAAAAAAAAAAAAAAAFQAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-22T16:34:33.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T16:34:33.864Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "NavMenu.razor.css",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor.css",
               "RelativeDocumentMoniker": "Layout\\NavMenu.razor.css",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\Layout\\NavMenu.razor.css",
               "RelativeToolTip": "Layout\\NavMenu.razor.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-22T16:34:03.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T16:34:03.323Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "app.css",
-              "DocumentMoniker": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\wwwroot\\css\\app.css",
+              "DocumentMoniker": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\wwwroot\\css\\app.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\app.css",
-              "ToolTip": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\wwwroot\\css\\app.css",
+              "ToolTip": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\wwwroot\\css\\app.css",
               "RelativeToolTip": "wwwroot\\css\\app.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-03-22T16:33:32.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T16:33:32.782Z"
             }
           ]
         }

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj": {}
+    "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj": {}
   },
   "projects": {
-    "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj": {
+    "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj",
+        "projectUniqueName": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj",
         "projectName": "LED Lamp Controller App",
-        "projectPath": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj",
-        "packagesPath": "C:\\Users\\hsg39\\.nuget\\packages\\",
-        "outputPath": "D:\\Dokumenty\\Programming projects\\SMP32\\LED Lamp\\LED Lamp Controller App\\obj\\",
+        "projectPath": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\LED Lamp Controller App.csproj",
+        "packagesPath": "C:\\Users\\releme\\.nuget\\packages\\",
+        "outputPath": "C:\\Pliki\\Dokumenty\\Programming Projects\\ESP32\\LED-Lamp\\LED Lamp Controller App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\hsg39\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\releme\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,7 +28,7 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {

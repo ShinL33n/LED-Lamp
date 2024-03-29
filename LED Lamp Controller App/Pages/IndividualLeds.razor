@@ -2,4 +2,36 @@
 
 <PageTitle>Individual LEDs</PageTitle>
 
-<h1>Individual LEDs Page</h1>
+<input type="range" @bind="sliderValue1" min="0" max="100" @oninput="e => HandleSliderInput(e, 1)">
+<input type="range" @bind="sliderValue2" min="0" max="100" @oninput="e => HandleSliderInput(e, 2)">
+
+@code {
+    private int sliderValue1 = 0;
+    private int sliderValue2 = 0;
+
+    private void HandleSliderInput(ChangeEventArgs e, int sliderNumber)
+    {
+        int value = int.Parse(e.Value.ToString()); // Pobieramy wartość z suwaka
+
+        if (sliderNumber == 1)
+        {
+            UpdateSlider1(value);
+        }
+        else if (sliderNumber == 2)
+        {
+            UpdateSlider2(value);
+        }
+    }
+
+    private void UpdateSlider1(int value)
+    {
+        sliderValue1 = value;
+        sliderValue2 = 100 - value;
+    }
+
+    private void UpdateSlider2(int value)
+    {
+        sliderValue2 = value;
+        sliderValue1 = 100 - value;
+    }
+}

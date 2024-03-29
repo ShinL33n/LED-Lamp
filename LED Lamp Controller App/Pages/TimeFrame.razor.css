@@ -21,20 +21,66 @@
 }
 
 .left-chart, .right-chart {
+    position: relative;
     flex-basis: 50%;
     flex-grow: 1;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
+    pointer-events: none;
 }
 
-.top-layer, .bottom-layer {
+.top-layer {
+    position: relative;
     flex-basis: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-end;
+    margin-top: 2.2em;
+    pointer-events: none;
 }
+
+.bottom-layer {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+    bottom: -5px;
+}
+
+.top-on-hour-slider {
+    position: absolute;
+    width: 100px;
+    left: 0;
+}
+
+.brightness-controller {
+    width: calc(100% - 4em);
+    height: calc(100% - 4em);
+    top: 2em;
+    left: 2em;
+    pointer-events: none;
+}
+
+.line-controller {
+    position: absolute;
+    width: calc(100% - 4em);
+    height: calc(100% - 4.2em);
+    top: 2.5em;
+    left: 2em;
+    pointer-events: none;
+}
+
+.line {
+    position: absolute;
+    height: 4px;
+    background-color: var(--accent-color);
+}
+
+#left-top-slider {
+    -webkit-transform: rotate(180deg);
+}
+
+#left-bottom-slider {
+    -webkit-transform: rotate(180deg);
+}
+
 
 @media (min-width: 640.98px) {
     .time-frame-container {
@@ -56,9 +102,10 @@ input[type=range] {
     height: .5em;
     -webkit-appearance: none;
     background: transparent;
-    background: #00000044; /* DO USUNIĘCIA */
+    /*background: #00000044; /* DO USUNIĘCIA */
     margin: 10px 0;
     width: 100%;
+    pointer-events: auto;
 }
 
     input[type=range]:focus {
@@ -153,45 +200,54 @@ input[type=range] {
 
 
 /* BRIGHTNESS SLIDER*/
-.brightness-controller {
-    width: calc(100% - 2em);
-    height: calc(100% - 2em);
-    top: 1em;
-    left: 1em;
-    pointer-events: none;
-}
 
-.brightness-slider {
-    -webkit-transform: rotate(90deg);
+input[type=range].brightness-slider {
+    height: 5em;
+    -webkit-transform: rotate(-90deg);
     position: relative;
-    top: calc(50% - 1em);
+    top: calc(50% - 3em);
     pointer-events: auto;
+    --webkit-slider-thumb-height: 0px;
 }
 
     .brightness-slider::-webkit-slider-thumb {
-        height: 300px !important;
+        height: var(--webkit-slider-thumb-height) !important;
         width: 4px !important;
         border-radius: 0px !important;
     }
 
     .brightness-slider::-webkit-slider-thumb {
-        height: 300px !important;
+        height: var(--webkit-slider-thumb-height) !important;
         width: 4px !important;
         border-radius: 0px !important;
     }
 
     .brightness-slider::-moz-range-thumb {
-        height: 300px !important;
+        height: var(--webkit-slider-thumb-height) !important;
         width: 4px !important;
         border-radius: 0px !important;
     }
 
     .brightness-slider::-ms-thumb {
-        height: 300px !important;
+        height: var(--webkit-slider-thumb-height) !important;
         width: 4px !important;
         border-radius: 0px !important;
     }
 
+
+/*datalist {
+    https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+    padding: 0 5px;
+    flex-direction: column;
+    writing-mode: vertical-lr;
+}*/
 
 @media (min-width: 640.98px) {
     

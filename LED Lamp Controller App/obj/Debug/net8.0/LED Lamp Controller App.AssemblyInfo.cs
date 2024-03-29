@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LED Lamp Controller App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c80baa9714654078a935e6dc13c0b7b8de6ccb7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+78945b6b494ca4b2e5c3a9d79e4b3bea2a6c4fa7")]
 [assembly: System.Reflection.AssemblyProductAttribute("LED Lamp Controller App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LED Lamp Controller App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

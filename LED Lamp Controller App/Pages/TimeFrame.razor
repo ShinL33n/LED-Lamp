@@ -9,48 +9,83 @@
     - wykresy (x,y), gdzie x to godziny, y to % świecenia danych kolorów, punkty dowolnie przesuwalne na wykresie, 
       z jakimś 'magnesowym przyczepianiem np co 5% brightnessu i 5min czasu' [wersja docelowa]
     - pola do ręcznego dokładnego ustawiania punktów (podobnie jak w StripColor.razor) 
+    
+    - zablokować dolne i górne slidery żeby nie można było ustawiać godzin startu/końca w bezsensowny sposób
 *@
 
 <article class="container">
     <div class="time-frame-container">
+        <div class="line-controller">
+            <div class="line" id="middle-hours-line"></div>
+        </div>
         <div class="brightness-controller" id="brightness-container">
-            <input class="brightness-slider" id="brightness-slider" min="0" max="100" type="range" />
+            <input class="brightness-slider" id="brightness-slider" min="0" max="100" type="range" @bind="brightnessSliderValue" @oninput="HandleBrightnessSliderInput" />
         </div>
         <div class="left-chart">
             <div class="top-layer">
-                <input class="top-on-hour-slider" type="range" />
+                <input class="top-on-hour-slider" id="left-top-slider" min="0" max="144" type="range" @bind="topLeftSliderValue" @oninput="HandleTopSliderInput" />
             </div>
             <div class="bottom-layer">
-                <input class="bottom-off-hour-slider" type="range" />
+                <input class="bottom-off-hour-slider" id="left-bottom-slider" min="0" max="144" type="range" @bind="bottomLeftSliderValue" @oninput="UpdateBottomLeftSlider" />
             </div>
         </div>
         <div class="right-chart">
             <div class="top-layer">
-                <input class="top-on-hour-slider" type="range" />
+                <input class="top-on-hour-slider" id="right-top-slider" min="0" max="144" type="range" @bind="topRightSliderValue" @oninput="HandleTopSliderInput" />
             </div>
             <div class="bottom-layer">
-                <input class="bottom-off-hour-slider" type="range" />
+                <input class="bottom-off-hour-slider" id="right-bottom-slider" min="0" max="144" type="range" @bind="bottomRightSliderValue" @oninput="UpdateBottomRightSlider" />
             </div>
         </div>
     </div>
 </article>
 
 
+
 <script>
 
     function setBrightnessSliderHeight() {
-        var brightnessContainerHeight = document.getElementById("brightness-container").offsetHeight;
-        var brightnessContainerWidth = document.getElementById("brightness-container").offsetWidth;
+        let brightnessContainerHeight = document.getElementById("brightness-container").offsetHeight;
+        let brightnessContainerWidth = document.getElementById("brightness-container").offsetWidth;
         document.getElementById("brightness-slider").style.width = brightnessContainerHeight + "px";
-        document.getElementById("brightness-slider").style.left = brightnessContainerWidth / 2 - brightnessContainerHeight / 2 + "px";
+        document.getElementById("brightness-slider").style.left = brightnessContainerWidth / 2 - brightnessContainerHeight / 2 + "px";      
+    }
+
+    function setTopSlidersPosition() {
+        let brightnessSliderValue = document.getElementById("brightness-slider").value;
+        let topSliders = document.getElementsByClassName("top-on-hour-slider");
+        for (let i = 0; i < topSliders.length; i++) {
+            topSliders[i].style.bottom = brightnessSliderValue + "%";
+        }
+        document.getElementById("middle-hours-line").style.bottom = brightnessSliderValue + "%";
+    }
+
+    function changeMiddleHoursLineWidth() {
+        let leftSliderValue = document.getElementById("left-top-slider").value;
+        let rightSliderValue = document.getElementById("right-top-slider").value;
+
+        let distanceLeft = leftSliderValue * 100 / 144;
+        let distanceRight = rightSliderValue * 100 / 144;
+
+        document.getElementById("middle-hours-line").style.left =  (100 - distanceLeft - 1) / 2 + "%";
+        document.getElementById("middle-hours-line").style.width = (distanceLeft + distanceRight + 2) / 2 + "%";
     }
 
     window.addEventListener('resize', function () {
         setBrightnessSliderHeight();
     });
 
-    window.addEventListener('load', function () {
+    if (document.readyState !== 'loading') {
+        changeMiddleHoursLineWidth();
+        setTopSlidersPosition();
         setBrightnessSliderHeight();
-    });
+    } else {
+        document.addEventListener('DOMContentLoaded', function () {
+            changeMiddleHoursLineWidth();
+            setTopSlidersPosition();
+            setBrightnessSliderHeight();
+        });
+    }
 
 </script>
+
